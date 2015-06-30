@@ -7,6 +7,19 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QxsqWebOnGitHub", "QxsqWebO
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common", "Common\Common.csproj", "{DB43EFF1-84D8-4976-8978-4BBF10F5D7CE}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SqlServer数据库备份", "SqlServer数据库备份", "{505F28AC-3B73-47EE-A9C6-B3DD951435EA}"
+	ProjectSection(SolutionItems) = preProject
+		..\..\..\MSData\QxsqWeb.mdf = ..\..\..\MSData\QxsqWeb.mdf
+		..\..\..\MSData\QxsqWeb_log.ldf = ..\..\..\MSData\QxsqWeb_log.ldf
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{ECF7F1F6-596C-4C22-B68D-0A35E349EDA2}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\NuGet.Config = .nuget\NuGet.Config
+		.nuget\NuGet.exe = .nuget\NuGet.exe
+		.nuget\NuGet.targets = .nuget\NuGet.targets
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

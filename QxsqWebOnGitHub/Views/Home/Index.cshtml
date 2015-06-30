@@ -1,13 +1,23 @@
 ﻿@{
     ViewBag.Title = "首页";
 }
+<script>
+    // You can also use "$(window).load(function() {"
+    $(function () {
+        // Slideshow 1
+        $("#slider1").responsiveSlides({
+            maxwidth: 2500,
+            speed: 600
+        });
+    });
+</script>
 
 			<!---start-images-slider---->
 <div class="image-slider">
     <!-- Slideshow 1 -->
     <ul class="rslides rslides1" id="slider1" style="max-width: 2500px;">
         <li id="rslides1_s0" class="" style="display: block; float: none; position: absolute; opacity: 0; z-index: 1; -webkit-transition: opacity 600ms ease-in-out; transition: opacity 600ms ease-in-out;">
-            <img src="./images/slider3.png" alt="">
+            <img src="/images/slider3.png" alt="">
             <div class="slider-info">
                 <p>Medica the best Hospital website</p>
                 <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </span>
@@ -15,7 +25,7 @@
             </div>
         </li>
         <li id="rslides1_s1" class="" style="float: none; position: absolute; opacity: 0; z-index: 1; display: list-item; -webkit-transition: opacity 600ms ease-in-out; transition: opacity 600ms ease-in-out;">
-            <img src="./images/slider2.png" alt="">
+            <img src="/images/slider2.png" alt="">
             <div class="slider-info">
                 <p>Medica the best Hospital website</p>
                 <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </span>
@@ -23,7 +33,7 @@
             </div>
         </li>
         <li id="rslides1_s2" class="rslides1_on" style="float: left; position: relative; opacity: 1; z-index: 2; display: list-item; -webkit-transition: opacity 600ms ease-in-out; transition: opacity 600ms ease-in-out;">
-            <img src="./images/slider2.png" alt="">
+            <img src="/images/slider2.png" alt="">
             <div class="slider-info">
                 <p>Medica the best Hospital website</p>
                 <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </span>
@@ -41,7 +51,7 @@
             <div class="content-top-grid">
                 <div class="content-top-grid-header">
                     <div class="content-top-grid-pic">
-                        <a href="#"><img src="./images/timer.png" title="image-name" /></a>
+                        <a href="#"><img src="/images/timer.png" title="image-name" /></a>
                     </div>
                     <div class="content-top-grid-title">
                         <h3>公共卫生</h3>
@@ -55,7 +65,7 @@
             <div class="content-top-grid">
                 <div class="content-top-grid-header">
                     <div class="content-top-grid-pic">
-                        <a href="#"><img src="./images/tool.png" title="image-name" /></a>
+                        <a href="#"><img src="/images/tool.png" title="image-name" /></a>
                     </div>
                     <div class="content-top-grid-title">
                         <h3>医疗服务</h3>
@@ -69,7 +79,7 @@
             <div class="content-top-grid">
                 <div class="content-top-grid-header">
                     <div class="content-top-grid-pic">
-                        <a href="#"><img src="./images/inject.png" title="image-name" /></a>
+                        <a href="#"><img src="/images/inject.png" title="image-name" /></a>
                     </div>
                     <div class="content-top-grid-title">
                         <h3>自闭症</h3>
