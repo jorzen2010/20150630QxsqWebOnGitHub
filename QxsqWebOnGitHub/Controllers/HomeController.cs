@@ -13,18 +13,40 @@ namespace QxsqWebOnGitHub.Controllers
             return View();
         }
 
-        public ActionResult About()
+        public ActionResult Gonggongweisheng()
+        {
+            return View();
+        }
+
+        public ActionResult Yiliaofuwu()
+        {
+            return View();
+        }
+
+        public ActionResult Zibizheng()
+        {
+            return View();
+        }
+
+        public ActionResult Lianxiwomen()
+        {
+            return View();
+        }
+
+        public ActionResult Xinwengonggao()
         {
             ViewBag.Message = "Your application description page.";
 
             return View();
         }
 
-        public ActionResult Contact()
+        public ActionResult Guanyuwomen()
         {
-            ViewBag.Message = "Your contact page.";
+            ViewBag.Message = "Your application description page.";
 
             return View();
         }
+
+      
     }
 }
