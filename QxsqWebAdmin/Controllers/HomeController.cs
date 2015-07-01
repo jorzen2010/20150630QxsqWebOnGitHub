@@ -13,14 +13,26 @@ namespace QxsqWebAdmin.Controllers
             return View();
         }
 
-        public ActionResult About()
+        public ActionResult AddNews()
         {
             ViewBag.Message = "Your application description page.";
 
             return View();
         }
 
-        public ActionResult Contact()
+        public ActionResult NewsList()
+        {
+            ViewBag.Message = "Your contact page.";
+
+            return View();
+        }
+        public ActionResult Mokuai()
+        {
+            ViewBag.Message = "Your contact page.";
+
+            return View();
+        }
+        public ActionResult Setting()
         {
             ViewBag.Message = "Your contact page.";
 
