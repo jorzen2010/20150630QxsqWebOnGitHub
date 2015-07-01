@@ -9,8 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common", "Common\Common.csp
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SqlServer数据库备份", "SqlServer数据库备份", "{505F28AC-3B73-47EE-A9C6-B3DD951435EA}"
 	ProjectSection(SolutionItems) = preProject
-		..\..\..\MSData\QxsqWeb.mdf = ..\..\..\MSData\QxsqWeb.mdf
-		..\..\..\MSData\QxsqWeb_log.ldf = ..\..\..\MSData\QxsqWeb_log.ldf
+		..\..\MSData\QxsqWeb.mdf = ..\..\MSData\QxsqWeb.mdf
+		..\..\MSData\QxsqWeb_log.ldf = ..\..\MSData\QxsqWeb_log.ldf
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{ECF7F1F6-596C-4C22-B68D-0A35E349EDA2}"
@@ -19,6 +19,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{ECF7F1
 		.nuget\NuGet.exe = .nuget\NuGet.exe
 		.nuget\NuGet.targets = .nuget\NuGet.targets
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QxsqWebAdmin", "QxsqWebAdmin\QxsqWebAdmin.csproj", "{B79E5A5E-C1F4-470B-9315-E81719185B68}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -34,6 +36,10 @@ Global
 		{DB43EFF1-84D8-4976-8978-4BBF10F5D7CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DB43EFF1-84D8-4976-8978-4BBF10F5D7CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DB43EFF1-84D8-4976-8978-4BBF10F5D7CE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B79E5A5E-C1F4-470B-9315-E81719185B68}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B79E5A5E-C1F4-470B-9315-E81719185B68}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B79E5A5E-C1F4-470B-9315-E81719185B68}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B79E5A5E-C1F4-470B-9315-E81719185B68}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
