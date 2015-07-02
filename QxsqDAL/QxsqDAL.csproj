@@ -30,6 +30,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.ApplicationBlocks.Data">
+      <HintPath>..\packages\Microsoft.ApplicationBlocks.Data.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -43,6 +46,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Common\Common.csproj">
+      <Project>{db43eff1-84d8-4976-8978-4bbf10f5d7ce}</Project>
+      <Name>Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\QxsqDTO\QxsqDTO.csproj">
       <Project>{ade947c9-10a5-493d-8a47-b41633488c28}</Project>
       <Name>QxsqDTO</Name>

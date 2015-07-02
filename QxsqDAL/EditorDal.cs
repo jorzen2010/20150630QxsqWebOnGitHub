@@ -1,8 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
+using Microsoft.ApplicationBlocks.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using QxsqDTO;
+using Common;
 
 namespace QxsqDAL
 {
@@ -10,37 +15,37 @@ namespace QxsqDAL
     {
         #region 添加一个游戏
 
-        public static void AddBanner(EditorDto editorDto)
+        public static void AddEditor(EditorDto editorDto)
         {
 
-            SqlParameter[] arParames = BannerDal.getParameters(editorDto);
+            SqlParameter[] arParames = EditorDal.getParameters(editorDto);
 
-            SqlHelper.ExecuteNonQuery(ConnDal.ConnectionString, CommandType.StoredProcedure, "CreateBanner", arParames);
+            SqlHelper.ExecuteNonQuery(DataConn.ConnectionString, CommandType.StoredProcedure, "CreateEditor", arParames);
 
         }
         #endregion
 
         #region 获取一个游戏
 
-        public static EditorDto GetOneBanner(string strwhere)
+        public static EditorDto GetOneEditor(string strwhere)
         {
             EditorDto editorDto = new EditorDto();
 
             SqlParameter[] arParames = new SqlParameter[2];
             arParames[0] = new SqlParameter("@table ", SqlDbType.VarChar, 200);
-            arParames[0].Value = "Pk66_Banner";
+            arParames[0].Value = "Pk66_Editor";
 
             arParames[1] = new SqlParameter("@Where ", SqlDbType.VarChar, 8000);
             arParames[1].Value = strwhere;
 
             DataTable dt = null;
 
-            DataSet ds = SqlHelper.ExecuteDataset(ConnDal.ConnectionString, CommandType.StoredProcedure, "getModelByWhere", arParames);
+            DataSet ds = SqlHelper.ExecuteDataset(DataConn.ConnectionString, CommandType.StoredProcedure, "getModelByWhere", arParames);
             dt = ds.Tables[0];
             foreach (DataRow dr in dt.Rows)
             {
 
-                editorDto = BannerDal.getDataRowToEditorDto(dr);
+                editorDto = EditorDal.getDataRowToEditorDto(dr);
 
             }
 
@@ -53,7 +58,7 @@ namespace QxsqDAL
         #endregion
 
         #region 取得游戏类型List
-        public static List<EditorDto> GetBannerList(string strwhere)
+        public static List<EditorDto> GetEditorList(string strwhere)
         {
             List<EditorDto> gamelist = new List<EditorDto>();
 
@@ -61,19 +66,19 @@ namespace QxsqDAL
 
             SqlParameter[] arParames = new SqlParameter[2];
             arParames[0] = new SqlParameter("@table ", SqlDbType.VarChar, 200);
-            arParames[0].Value = "Pk66_Banner";
+            arParames[0].Value = "Pk66_Editor";
 
             arParames[1] = new SqlParameter("@Where ", SqlDbType.VarChar, 8000);
             arParames[1].Value = strwhere;
 
             DataTable dt = null;
-            DataSet ds = SqlHelper.ExecuteDataset(ConnDal.ConnectionString, CommandType.StoredProcedure, "getModelByWhere", arParames);
+            DataSet ds = SqlHelper.ExecuteDataset(DataConn.ConnectionString, CommandType.StoredProcedure, "getModelByWhere", arParames);
             dt = ds.Tables[0];
             foreach (DataRow dr in dt.Rows)
             {
                 EditorDto editorDto = new EditorDto();
 
-                editorDto = BannerDal.getDataRowToEditorDto(dr);
+                editorDto = EditorDal.getDataRowToEditorDto(dr);
 
 
                 gamelist.Add(editorDto);
@@ -91,20 +96,20 @@ namespace QxsqDAL
             SqlParameter[] arParames = new SqlParameter[5];
 
 
-            arParames[0] = new SqlParameter("@Banner_Id", SqlDbType.Int);
-            arParames[0].Value = editorDto.BannerId;
+            arParames[0] = new SqlParameter("@Editor_Id", SqlDbType.Int);
+            arParames[0].Value = editorDto.EditorId;
 
-            arParames[1] = new SqlParameter("@Banner_Title", SqlDbType.VarChar, 500);
-            arParames[1].Value = editorDto.BannerTitle;
+            arParames[1] = new SqlParameter("@Editor_Title", SqlDbType.VarChar, 500);
+            arParames[1].Value = editorDto.EditorTitle;
 
-            arParames[2] = new SqlParameter("@Banner_Img", SqlDbType.VarChar, 500);
-            arParames[2].Value = editorDto.BannerImg;
+            arParames[2] = new SqlParameter("@Editor_Img", SqlDbType.VarChar, 500);
+            arParames[2].Value = editorDto.EditorImg;
 
-            arParames[3] = new SqlParameter("@Banner_Href", SqlDbType.VarChar, 500);
-            arParames[3].Value = editorDto.BannerHref;
+            arParames[3] = new SqlParameter("@Editor_Href", SqlDbType.VarChar, 500);
+            arParames[3].Value = editorDto.EditorHref;
 
-            arParames[4] = new SqlParameter("@Banner_Enable", SqlDbType.Bit);
-            arParames[4].Value = editorDto.BannerEnable;
+            arParames[4] = new SqlParameter("@Editor_Enable", SqlDbType.Bit);
+            arParames[4].Value = editorDto.EditorEnable;
 
 
             return arParames;
@@ -117,13 +122,13 @@ namespace QxsqDAL
         {
             EditorDto editorDto = new EditorDto();
 
-            editorDto.BannerId = int.Parse(dr["Banner_Id"].ToString());
-            editorDto.BannerTitle = dr["Banner_Title"].ToString();
-            editorDto.BannerImg = dr["Banner_Img"].ToString();
+            editorDto.EditorId = int.Parse(dr["Editor_Id"].ToString());
+            editorDto.EditorTitle = dr["Editor_Title"].ToString();
+            editorDto.EditorImg = dr["Editor_Img"].ToString();
 
-            editorDto.BannerHref = dr["Banner_Href"].ToString();
+            editorDto.EditorHref = dr["Editor_Href"].ToString();
 
-            editorDto.BannerEnable = bool.Parse(dr["Banner_Enable"].ToString());
+            editorDto.EditorEnable = bool.Parse(dr["Editor_Enable"].ToString());
 
             return editorDto;
         }
@@ -136,19 +141,19 @@ namespace QxsqDAL
             EditorDto editorDto = new EditorDto();
 
 
-            editorDto.BannerId = int.Parse(dr["Banner_Id"].ToString());
-            editorDto.BannerTitle = dr["Banner_Title"].ToString();
-            editorDto.BannerImg = dr["Banner_Img"].ToString();
+            editorDto.EditorId = int.Parse(dr["Editor_Id"].ToString());
+            editorDto.EditorTitle = dr["Editor_Title"].ToString();
+            editorDto.EditorImg = dr["Editor_Img"].ToString();
 
-            editorDto.BannerHref = dr["Banner_Href"].ToString();
+            editorDto.EditorHref = dr["Editor_Href"].ToString();
 
-            editorDto.BannerEnable = bool.Parse(dr["Banner_Enable"].ToString());
+            editorDto.EditorEnable = bool.Parse(dr["Editor_Enable"].ToString());
             return editorDto;
         }
 
         #endregion
 
-        #region 删除一个Banner对象DTO
+        #region 删除一个Editor对象DTO
         public static void DeleteEditorDto(string table, string strwhere)
         {
 
@@ -160,7 +165,7 @@ namespace QxsqDAL
             arParames[1] = new SqlParameter("@Where ", SqlDbType.VarChar, 8000);
             arParames[1].Value = strwhere;
 
-            SqlHelper.ExecuteNonQuery(ConnDal.ConnectionString, CommandType.StoredProcedure, "deleteModelByWhere", arParames);
+            SqlHelper.ExecuteNonQuery(DataConn.ConnectionString, CommandType.StoredProcedure, "deleteModelByWhere", arParames);
 
 
 
@@ -168,13 +173,13 @@ namespace QxsqDAL
         #endregion
 
 
-        #region 更新一个Banner课程
-        public static void UpdateBanner(EditorDto editorDto)
+        #region 更新一个Editor课程
+        public static void UpdateEditor(EditorDto editorDto)
         {
 
-            SqlParameter[] arParames = BannerDal.getParameters(editorDto);
+            SqlParameter[] arParames = EditorDal.getParameters(editorDto);
 
-            SqlHelper.ExecuteNonQuery(ConnDal.ConnectionString, CommandType.StoredProcedure, "UpdateBanner", arParames);
+            SqlHelper.ExecuteNonQuery(DataConn.ConnectionString, CommandType.StoredProcedure, "UpdateEditor", arParames);
 
 
         }
@@ -183,7 +188,7 @@ namespace QxsqDAL
 
 
         #region 取得联合查询的数据库游戏内容并进行分页
-        public static Pager GetBannerPage(Pager pager, string strwhere, string table)
+        public static Pager GetEditorPage(Pager pager, string strwhere, string table)
         {
             SqlParameter[] arParms = new SqlParameter[10];
 
@@ -222,7 +227,7 @@ namespace QxsqDAL
 
             //@ID   --主表的主键
             arParms[7] = new SqlParameter("@masterFeilds", SqlDbType.NVarChar, 150);
-            arParms[7].Value = "Banner_ID";
+            arParms[7].Value = "Editor_ID";
 
 
 
@@ -237,14 +242,14 @@ namespace QxsqDAL
 
             List<EditorDto> list = new List<EditorDto>();
             DataTable dt = null;
-            DataSet ds = SqlHelper.ExecuteDataset(ConnDal.ConnectionString, CommandType.StoredProcedure, "p_generalTablePage", arParms);
+            DataSet ds = SqlHelper.ExecuteDataset(DataConn.ConnectionString, CommandType.StoredProcedure, "p_generalTablePage", arParms);
             dt = ds.Tables[0];
             foreach (DataRow dr in dt.Rows)
             {
 
 
 
-                EditorDto editorDto = BannerDal.getDataRowToEditorDto(dr);
+                EditorDto editorDto = EditorDal.getDataRowToEditorDto(dr);
 
 
                 list.Add(editorDto);
