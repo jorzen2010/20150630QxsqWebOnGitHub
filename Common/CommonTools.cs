@@ -19,7 +19,7 @@ namespace Common
 
             return time.ToString();
         }
-        public string ToMd5(string input)
+        public static string ToMd5(string input)
         {
             if (input == null)
             {

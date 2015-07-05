@@ -11,8 +11,8 @@ namespace QxsqDTO
         public int EditorId {get;set;}
         public string EditorUserName {get;set;}
         public string EditorPassword {get;set;}
+        public string EditorRealName { get; set; }
         public DateTime EditorRegTime {get;set;}
-        public DateTime EditorLoginTime { get; set; }
 
     }
 }

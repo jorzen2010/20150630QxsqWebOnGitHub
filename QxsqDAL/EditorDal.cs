@@ -13,34 +13,35 @@ namespace QxsqDAL
 {
     public class EditorDal
     {
-        #region 添加一个游戏
+
+       #region 网站管理员添加
 
         public static void AddEditor(EditorDto editorDto)
         {
 
             SqlParameter[] arParames = EditorDal.getParameters(editorDto);
 
-            SqlHelper.ExecuteNonQuery(DataConn.ConnectionString, CommandType.StoredProcedure, "CreateEditor", arParames);
+            SqlHelper.ExecuteNonQuery(CommonDal.ConnectionString, CommandType.StoredProcedure, "CreateEditor", arParames);
 
         }
         #endregion
 
-        #region 获取一个游戏
+        #region 获取一个网站管理员DTO
 
-        public static EditorDto GetOneEditor(string strwhere)
+        public static EditorDto GetOneEditor(string table,string strwhere)
         {
             EditorDto editorDto = new EditorDto();
 
             SqlParameter[] arParames = new SqlParameter[2];
             arParames[0] = new SqlParameter("@table ", SqlDbType.VarChar, 200);
-            arParames[0].Value = "Pk66_Editor";
+            arParames[0].Value = table;
 
             arParames[1] = new SqlParameter("@Where ", SqlDbType.VarChar, 8000);
             arParames[1].Value = strwhere;
 
             DataTable dt = null;
 
-            DataSet ds = SqlHelper.ExecuteDataset(DataConn.ConnectionString, CommandType.StoredProcedure, "getModelByWhere", arParames);
+            DataSet ds = SqlHelper.ExecuteDataset(CommonDal.ConnectionString, CommandType.StoredProcedure, "getModelByWhere", arParames);
             dt = ds.Tables[0];
             foreach (DataRow dr in dt.Rows)
             {
@@ -56,8 +57,7 @@ namespace QxsqDAL
 
         }
         #endregion
-
-        #region 取得游戏类型List
+        #region 获取网站管理员List数据
         public static List<EditorDto> GetEditorList(string strwhere)
         {
             List<EditorDto> gamelist = new List<EditorDto>();
@@ -72,7 +72,7 @@ namespace QxsqDAL
             arParames[1].Value = strwhere;
 
             DataTable dt = null;
-            DataSet ds = SqlHelper.ExecuteDataset(DataConn.ConnectionString, CommandType.StoredProcedure, "getModelByWhere", arParames);
+            DataSet ds = SqlHelper.ExecuteDataset(CommonDal.ConnectionString, CommandType.StoredProcedure, "getModelByWhere", arParames);
             dt = ds.Tables[0];
             foreach (DataRow dr in dt.Rows)
             {
@@ -96,20 +96,20 @@ namespace QxsqDAL
             SqlParameter[] arParames = new SqlParameter[5];
 
 
-            arParames[0] = new SqlParameter("@Editor_Id", SqlDbType.Int);
+            arParames[0] = new SqlParameter("@EditorId", SqlDbType.Int);
             arParames[0].Value = editorDto.EditorId;
 
-            arParames[1] = new SqlParameter("@Editor_Title", SqlDbType.VarChar, 500);
-            arParames[1].Value = editorDto.EditorTitle;
+            arParames[1] = new SqlParameter("@EditorUserName", SqlDbType.VarChar, 50);
+            arParames[1].Value = editorDto.EditorUserName;
 
-            arParames[2] = new SqlParameter("@Editor_Img", SqlDbType.VarChar, 500);
-            arParames[2].Value = editorDto.EditorImg;
+            arParames[2] = new SqlParameter("@EditorPassword", SqlDbType.VarChar, 50);
+            arParames[2].Value = editorDto.EditorPassword;
 
-            arParames[3] = new SqlParameter("@Editor_Href", SqlDbType.VarChar, 500);
-            arParames[3].Value = editorDto.EditorHref;
+            arParames[3] = new SqlParameter("@EditorRealName", SqlDbType.VarChar, 50);
+            arParames[3].Value = editorDto.EditorRealName;
 
-            arParames[4] = new SqlParameter("@Editor_Enable", SqlDbType.Bit);
-            arParames[4].Value = editorDto.EditorEnable;
+            arParames[4] = new SqlParameter("@EditorRegTime", SqlDbType.DateTime);
+            arParames[4].Value = editorDto.EditorRegTime;
 
 
             return arParames;
@@ -122,13 +122,13 @@ namespace QxsqDAL
         {
             EditorDto editorDto = new EditorDto();
 
-            editorDto.EditorId = int.Parse(dr["Editor_Id"].ToString());
-            editorDto.EditorTitle = dr["Editor_Title"].ToString();
-            editorDto.EditorImg = dr["Editor_Img"].ToString();
+            editorDto.EditorId = int.Parse(dr["EditorId"].ToString());
+            editorDto.EditorUserName = dr["EditorUserName"].ToString();
+            editorDto.EditorRealName = dr["EditorRealName"].ToString();
 
-            editorDto.EditorHref = dr["Editor_Href"].ToString();
+            editorDto.EditorPassword = dr["EditorPassword"].ToString();
 
-            editorDto.EditorEnable = bool.Parse(dr["Editor_Enable"].ToString());
+            editorDto.EditorRegTime = DateTime.Parse(dr["EditorRegTime"].ToString());
 
             return editorDto;
         }
@@ -141,13 +141,13 @@ namespace QxsqDAL
             EditorDto editorDto = new EditorDto();
 
 
-            editorDto.EditorId = int.Parse(dr["Editor_Id"].ToString());
-            editorDto.EditorTitle = dr["Editor_Title"].ToString();
-            editorDto.EditorImg = dr["Editor_Img"].ToString();
+            editorDto.EditorId = int.Parse(dr["EditorId"].ToString());
+            editorDto.EditorUserName = dr["EditorUserName"].ToString();
+            editorDto.EditorRealName = dr["EditorRealName"].ToString();
 
-            editorDto.EditorHref = dr["Editor_Href"].ToString();
+            editorDto.EditorPassword = dr["EditorPassword"].ToString();
 
-            editorDto.EditorEnable = bool.Parse(dr["Editor_Enable"].ToString());
+            editorDto.EditorRegTime = DateTime.Parse(dr["EditorRegTime"].ToString());
             return editorDto;
         }
 
@@ -165,7 +165,7 @@ namespace QxsqDAL
             arParames[1] = new SqlParameter("@Where ", SqlDbType.VarChar, 8000);
             arParames[1].Value = strwhere;
 
-            SqlHelper.ExecuteNonQuery(DataConn.ConnectionString, CommandType.StoredProcedure, "deleteModelByWhere", arParames);
+            SqlHelper.ExecuteNonQuery(CommonDal.ConnectionString, CommandType.StoredProcedure, "deleteModelByWhere", arParames);
 
 
 
@@ -173,13 +173,13 @@ namespace QxsqDAL
         #endregion
 
 
-        #region 更新一个Editor课程
+        #region 更新一个Editor
         public static void UpdateEditor(EditorDto editorDto)
         {
 
             SqlParameter[] arParames = EditorDal.getParameters(editorDto);
 
-            SqlHelper.ExecuteNonQuery(DataConn.ConnectionString, CommandType.StoredProcedure, "UpdateEditor", arParames);
+            SqlHelper.ExecuteNonQuery(CommonDal.ConnectionString, CommandType.StoredProcedure, "UpdateEditor", arParames);
 
 
         }
@@ -187,78 +187,63 @@ namespace QxsqDAL
         #endregion
 
 
-        #region 取得联合查询的数据库游戏内容并进行分页
+        #region 取得单表的查询并进行分页数据
         public static Pager GetEditorPage(Pager pager, string strwhere, string table)
         {
-            SqlParameter[] arParms = new SqlParameter[10];
-
-            //@tblName   --要分页显示的表名（支持多个表）
-            arParms[0] = new SqlParameter("@strTbName", SqlDbType.NVarChar, 200);
+            SqlParameter[] arParms = new SqlParameter[9];
+            //@tbname   --要分页显示的表名
+            arParms[0] = new SqlParameter("@tbname", SqlDbType.NVarChar, 30);
             arParms[0].Value = table;
 
-            // @fldName --需要显示的字段
-            arParms[1] = new SqlParameter("@strFeilds", SqlDbType.NVarChar, 500);
-            arParms[1].Value = "*";
-
-            // @PageSize --每页的大小(记录数)
-            arParms[2] = new SqlParameter("@PageSize", SqlDbType.Int);
-            arParms[2].Value = pager.PageSize;
+            // @FieldKey --用于定位记录的主键(惟一键)字段,可以是逗号分隔的多个字段
+            arParms[1] = new SqlParameter("@FieldKey", SqlDbType.NVarChar, 40);
+            arParms[1].Value = "EditorId";
 
             //@PageCurrent --要显示的页码
-            arParms[3] = new SqlParameter("@PageIndex", SqlDbType.Int);
-            arParms[3].Value = pager.PageNo + 1;
+            arParms[2] = new SqlParameter("@PageCurrent", SqlDbType.Int);
+            arParms[2].Value = pager.PageNo + 1;
 
+            // @PageSize --每页的大小(记录数)
+            arParms[3] = new SqlParameter("@PageSize", SqlDbType.Int);
+            arParms[3].Value = pager.PageSize;
 
-            //@FieldShow  --排序字段或条件
-            arParms[4] = new SqlParameter("@strOrder", SqlDbType.NVarChar, 200);
-            arParms[4].Value = "";
+            //@FieldShow  --以逗号分隔的要显示的字段列表,如果不指定,则显示所有字段
+            arParms[4] = new SqlParameter("@FieldShow", SqlDbType.NVarChar, 500);
+            arParms[4].Value = "*";
 
-            //@Sort --1为升序，0为降序
+            //@FieldOrder --以逗号分隔的排序字段列表,可以指定在字段后面指定DESC/ASC用于指定排序顺序
 
-            arParms[5] = new SqlParameter("@OrderType", SqlDbType.Int);
-            arParms[5].Value = 1;
+            arParms[5] = new SqlParameter("@FieldOrder", SqlDbType.NVarChar, 500);
+            arParms[5].Value = "EditorId desc";
 
-            //@strCondition --查询条件，不含where
-
-            arParms[6] = new SqlParameter("@strWhere", SqlDbType.NVarChar, 1000);
+            //@Where   --查询条件
+            arParms[6] = new SqlParameter("@Where", SqlDbType.VarChar, 8000);
             arParms[6].Value = strwhere;
 
-
-
-            //@ID   --主表的主键
-            arParms[7] = new SqlParameter("@masterFeilds", SqlDbType.NVarChar, 150);
-            arParms[7].Value = "Editor_ID";
-
-
-
             //@PageCount --总页数
-            arParms[8] = new SqlParameter("@totalPage", SqlDbType.Int);
-            arParms[8].Direction = ParameterDirection.Output;
+            arParms[7] = new SqlParameter("@PageCount", SqlDbType.Int);
+            arParms[7].Direction = ParameterDirection.Output;
 
             //@RecordCount --总记录数
-            arParms[9] = new SqlParameter("@RecordCount", SqlDbType.Int);
-            arParms[9].Direction = ParameterDirection.Output;
+            arParms[8] = new SqlParameter("@RecordCount", SqlDbType.Int);
+            arParms[8].Direction = ParameterDirection.Output;
 
-
+            EditorDto editorDto = null;
             List<EditorDto> list = new List<EditorDto>();
             DataTable dt = null;
-            DataSet ds = SqlHelper.ExecuteDataset(DataConn.ConnectionString, CommandType.StoredProcedure, "p_generalTablePage", arParms);
+            DataSet ds = SqlHelper.ExecuteDataset(CommonDal.ConnectionString, CommandType.StoredProcedure, "sp_AspNetPageView", arParms);
             dt = ds.Tables[0];
             foreach (DataRow dr in dt.Rows)
             {
-
-
-
-                EditorDto editorDto = EditorDal.getDataRowToEditorDto(dr);
-
-
+                editorDto = EditorDal.getDataRowToEditorDto(dr);
                 list.Add(editorDto);
             }
 
-            var totalItems = (int)arParms[9].Value;
+            var totalItems = (int)arParms[8].Value;
 
             pager.Amount = totalItems;
             pager.Entity = list.AsQueryable();
+            pager.PageCount = (int)arParms[7].Value;
 
             return pager;
         }

@@ -1,0 +1,79 @@
+﻿@model QxsqWebAdmin.Models.EditorAddViewModel
+@{
+    ViewBag.Title = "新增网站管理员";
+}
+
+<aside class="right-side">
+    <!-- Content Header (Page header) -->
+    <!-- Main content -->
+    <section class="content">
+
+        <!-- Small boxes (Stat box) -->
+        <!-- /.row -->
+        <!-- top row -->
+        <div class="row">
+            <div class="col-xs-12 connectedSortable">
+
+            </div><!-- /.col -->
+        </div>
+        <!-- /.row -->
+        <!-- Main row -->
+        <div class="row">
+            <!-- left column -->
+            <div class="col-md-12">
+                <!-- general form elements -->
+                <div class="box box-primary">
+                    <div class="box-header">
+                        <h3 class="box-title">@ViewBag.Title</h3>
+                    </div><!-- /.box-header -->
+                    <!-- form start -->
+                  @using (Html.BeginForm("EditorInsert", "Editor", FormMethod.Post))
+    {     
+                     
+                       @Html.ValidationSummary(true)
+                      <div class="box-body">
+                            <div class="form-group">
+
+                                @Html.LabelFor(model => model.EditorUserName)  @Html.ValidationMessageFor(model => model.EditorUserName)
+                                @Html.TextBoxFor(model => model.EditorUserName, new { @class = "form-control" })
+                              
+                               
+                            </div>
+
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.EditorRealName)  @Html.ValidationMessageFor(model => model.EditorRealName)
+@Html.TextBoxFor(model => model.EditorRealName, new { @class = "form-control" })
+                            </div>
+
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.EditorPassword)  @Html.ValidationMessageFor(model => model.EditorPassword)
+@Html.PasswordFor(model => model.EditorPassword, new { @class = "form-control" })
+                            </div>
+
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.ConfirmPassword)  @Html.ValidationMessageFor(model => model.ConfirmPassword)
+@Html.PasswordFor(model => model.ConfirmPassword, new { @class = "form-control" })
+                            </div>
+
+
+                           
+
+
+                           
+                        </div><!-- /.box-body -->
+
+                        <div class="box-footer">
+                            <button type="submit" class="btn btn-primary btn-lg">保存</button>
+                        </div>
+                  }
+                </div><!-- /.box -->
+
+
+
+            </div><!--/.col (left) -->
+            <!-- right column -->
+            <!--/.col (right) -->
+        </div><!-- /.row (main row) -->
+
+    </section><!-- /.content -->
+</aside>

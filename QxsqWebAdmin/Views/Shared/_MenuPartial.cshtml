@@ -56,10 +56,22 @@
                 </ul>
             </li>
 
-            <li>
-                <a href="@Url.Action("Setting","Home")">
-                    <i class="fa fa-cog"></i> <span>系统设置</span>
+          
+
+            <li class="treeview">
+                <a href="#">
+                    <i class="fa fa-bar-chart-o"></i>
+                    <span>系统设置</span>
+                    <i class="fa fa-angle-left pull-right"></i>
                 </a>
+                <ul class="treeview-menu">
+                    <li><a href="@Url.Action("EditorIndex", "Editor")"><i class="fa fa-angle-double-right"></i> 网站管理员设置</a></li>
+                    <li><a href="@Url.Action("NewsList", "Home")"><i class="fa fa-angle-double-right"></i>  文章分类设置</a></li>
+                   <!-- 留作备用  
+                    <li><a href="@Url.Action("NewsList","Home")"><i class="fa fa-angle-double-right"></i>  全科医生设置</a></li>
+                    <li><a href="@Url.Action("NewsList","Home")"><i class="fa fa-angle-double-right"></i>  健康档案类别设置</a></li>
+                   --> 
+                </ul>
             </li>
 
         </ul>

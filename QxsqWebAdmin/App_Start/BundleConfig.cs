@@ -8,14 +8,20 @@ namespace QxsqWebAdmin
         // 有关绑定的详细信息，请访问 http://go.microsoft.com/fwlink/?LinkId=301862
         public static void RegisterBundles(BundleCollection bundles)
         {
+            // Jquery基本代码
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
-                        "~/js/jquery.min.js",
-                        "~/js/jquery-ui-1.10.3.min.js"));
+            "~/js/jquery.min.js"));
 
+            // JqueryUI代码
+            bundles.Add(new ScriptBundle("~/bundles/jqueryui").Include(
+                        "~/Scripts/jquery-ui-{version}.js"));
+            // Jquery验证代码
             bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
+                        "~/Scripts/jquery.unobtrusive*",
                         "~/Scripts/jquery.validate*"));
 
-            // 使用要用于开发和学习的 Modernizr 的开发版本。然后，当你做好
+
+            // 暂时不需要，使用要用于开发和学习的 Modernizr 的开发版本。然后，当你做好
             // 生产准备时，请使用 http://modernizr.com 上的生成工具来仅选择所需的测试。
             bundles.Add(new ScriptBundle("~/bundles/modernizr").Include(
                         "~/Scripts/modernizr-*"));
@@ -45,6 +51,8 @@ namespace QxsqWebAdmin
                       "~/css/daterangepicker/daterangepicker-bs3.css",
                       "~/css/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css",
                       "~/css/AdminLTE.css"));
+
+            
         }
     }
 }

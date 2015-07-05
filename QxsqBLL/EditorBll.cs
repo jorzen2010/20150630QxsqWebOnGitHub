@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Web.Mvc;
 using QxsqDTO;
 using QxsqDAL;
 using Common;
@@ -12,30 +11,7 @@ namespace QxsqBLL
 {
     public class EditorBll
     {
-         #region 得到一个Editorlist 并显示成下拉列表形式
-
-
-        public static List<SelectListItem> GetEditorListForSelectListItems(string strwhere)
-        {
-
-
-            List<EditorDto> EditorDtoList = EditorDal.GetEditorList(strwhere);
-
-            List<SelectListItem> Editorlist = new List<SelectListItem>();
-
-            Editorlist.Add(new SelectListItem { Text = "请选择游戏",Value = "0"});
-
-            foreach (EditorDto dto in EditorDtoList)
-            {
-                Editorlist.Add(new SelectListItem { Text = dto.EditorUserName, Value = dto.EditorId.ToString() });
-
-            }
-
-            return Editorlist;
-        }
-
-
-        #endregion
+         
 
 
         public static List<EditorDto> GetEditorDtoList(string strwhere)
@@ -57,10 +33,10 @@ namespace QxsqBLL
 
         #endregion
 
-        #region 新增一个游戏
-        public static void AddEditor(EditorDto gameDto)
+        #region 新增一个
+        public static void AddEditor(EditorDto editorDto)
         {
-            EditorDal.AddEditor(gameDto);
+            EditorDal.AddEditor(editorDto);
      
         }
 
@@ -68,11 +44,11 @@ namespace QxsqBLL
         #endregion
 
         #region 获取一个Editor
-        public static EditorDto GetOneEditorDto(string strwhere)
+        public static EditorDto GetOneEditorDto(string table,string strwhere)
         {
             EditorDto gameDto=new EditorDto();
 
-            gameDto = EditorDal.GetOneEditor(strwhere);
+            gameDto = EditorDal.GetOneEditor(table,strwhere);
 
             return gameDto;
         }
@@ -82,11 +58,18 @@ namespace QxsqBLL
 
         #region 更新Editor
 
-        public static void UpdateEditorDt0(EditorDto gameDto)
+        public static void UpdateEditorDto(EditorDto editorDto)
         {
-            EditorDal.UpdateEditor(gameDto);
+            EditorDal.UpdateEditor(editorDto);
         }
 
+        #endregion
+
+        #region 删除Editor
+        public static void DeleteEditorDto(string table,string strwhere)
+        {
+            CommonDal.DeleteOneDto(table,strwhere);
+        }
         #endregion
     }
 }

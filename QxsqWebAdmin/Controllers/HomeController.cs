@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Common;
+using QxsqBLL;
 
 namespace QxsqWebAdmin.Controllers
 {
@@ -32,11 +34,22 @@ namespace QxsqWebAdmin.Controllers
 
             return View();
         }
-        public ActionResult Setting()
+        public ActionResult Setting(int? p)
         {
-            ViewBag.Message = "Your contact page.";
+            string strwhere = "EditorId>0";
+            string table = "QxsqEditor";
 
-            return View();
+            Pager pager = new Pager();
+            pager.PageSize = 2;
+            pager.PageNo = p ?? 1;
+
+            pager = EditorBll.GetEditorPager(pager, strwhere, table);
+            ViewBag.PageNo = p ?? 1;
+            ViewBag.PageCount = pager.PageCount;
+            ViewBag.RecordCount = pager.Amount;
+
+
+            return View(pager.Entity);
         }
         public ActionResult Login()
         {
