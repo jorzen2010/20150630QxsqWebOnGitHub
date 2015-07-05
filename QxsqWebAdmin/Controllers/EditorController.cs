@@ -35,6 +35,7 @@ namespace QxsqWebAdmin.Controllers
             return View(pager.Entity);
         }
         #endregion
+
         #region 网站管理员添加
         public ActionResult EditorAdd()
         {

@@ -43,6 +43,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CommonDal.cs" />
+    <Compile Include="MokuaiDal.cs" />
     <Compile Include="EditorDal.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -1,0 +1,48 @@
+﻿@{
+    string folder = (string)ViewData.ModelMetadata.AdditionalValues["Folder"];
+
+    var name = Html.NameForModel();
+    var id = Html.IdForModel();
+}
+<input type="hidden" name="@name" id="@id" value="@Model" readonly="readonly" />
+<div id="altContent">
+    <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000"
+            codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,40,0"
+            width="650" height="450" id="myMovieName">
+        <param name=movie value="/img/avatar.swf">
+        <param name=quality value=high>
+        <param name=bgcolor value=#FFFFFF>
+        <param name="flashvars" value="imgUrl=/img/default.jpg&uploadUrl=/Handler/upfile.aspx&uploadSrc=false&showCame=true&pCut=100|100&pSize=180|180|60|60|30|30&pData=180|180|60|60|30|30" />
+
+        <embed src="~/img/avatar.swf" quality=high bgcolor=#FFFFFF width="650" height="450" wmode="transparent" flashvars="imgUrl=/img/default.jpg&uploadUrl=/Handler/upfile.aspx&uploadSrc=true&showCame=true&pCut=100|100&pSize=180|180|60|60|30|30&pData=180|180|60|60|30|30"
+               name="myMovieName" align="" type="application/x-shockwave-flash" allowscriptaccess="always"
+               pluginspage="http://www.macromedia.com/go/getflashplayer">
+        </EMBED>
+    </object>
+</div>
+<script type="text/javascript">
+    function uploadevent(status, picUrl, callbackdata) {
+        //alert(picUrl); //后端存储图片
+        //	alert(callbackdata);
+        status += '';
+        switch (status) {
+            case '1':
+                var time = new Date().getTime();
+                var filename162 = picUrl + '_162.jpg';
+                var filename48 = picUrl + '_48.jpg';
+                var filename20 = picUrl + "_20.jpg";
+                $.getJSON('/Teacher/SetModelByAjax?table=Jlxy_Teacher&strwhere=TeacherId=1&columnname=TeacherImg&columnvalue=' + filename48,
+
+                    function () {
+                       
+
+                    });
+                break;
+            case '-1':
+                window.location.reload();
+                break;
+            default:
+                window.location.reload();
+        }
+    }
+</script>

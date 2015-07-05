@@ -46,11 +46,11 @@ namespace QxsqBLL
         #region 获取一个Editor
         public static EditorDto GetOneEditorDto(string table,string strwhere)
         {
-            EditorDto gameDto=new EditorDto();
+            EditorDto editorDto=new EditorDto();
 
-            gameDto = EditorDal.GetOneEditor(table,strwhere);
+            editorDto = EditorDal.GetOneEditor(table, strwhere);
 
-            return gameDto;
+            return editorDto;
         }
 
 
