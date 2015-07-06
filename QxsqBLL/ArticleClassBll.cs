@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web.Mvc;
 using QxsqDTO;
 using QxsqDAL;
 using Common;
@@ -11,8 +12,25 @@ namespace QxsqBLL
 {
     public class ArticleClassBll
     {
-         
 
+        #region CourseDiscipline以下拉框显示
+        public static List<SelectListItem> GetArticleClassForSelect(int? courseDisciplineId = 0)
+        {
+            List<ArticleClassDto> articleClassDtoList = ArticleClassDal.GetArticleClassList("1=1");
+
+            List<SelectListItem> items = new List<SelectListItem>();
+
+            items.Add(new SelectListItem { Text = "请选择文章类别" });
+
+            foreach (ArticleClassDto articleClassDto in articleClassDtoList)
+            {
+
+                items.Add(new SelectListItem { Text = articleClassDto.ArticleClassName, Value = articleClassDto.ArticleClassName });
+            }
+
+            return items;
+        }
+        #endregion
 
         public static List<ArticleClassDto> GetArticleClassDtoList(string strwhere)
         {

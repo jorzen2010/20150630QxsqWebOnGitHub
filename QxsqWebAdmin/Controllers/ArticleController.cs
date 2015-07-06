@@ -39,6 +39,7 @@ namespace QxsqWebAdmin.Controllers
         #region 文章添加
         public ActionResult ArticleAdd()
         {
+            ViewData["ArticleClassList"] = ArticleClassBll.GetArticleClassForSelect();
             return View();
 
         }
@@ -62,6 +63,8 @@ namespace QxsqWebAdmin.Controllers
             model.ArticleHot = articleDto.ArticleHot;
 
             model.ArticleImportant = articleDto.ArticleImportant;
+
+            ViewData["ArticleClassList"] = ArticleClassBll.GetArticleClassForSelect();
 
             
 

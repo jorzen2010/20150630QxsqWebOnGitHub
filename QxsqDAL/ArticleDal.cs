@@ -94,7 +94,7 @@ namespace QxsqDAL
         #region 将DTO映射成数据库参数
         private static SqlParameter[] getParameters(ArticleDto articleDto)
         {
-            SqlParameter[] arParames = new SqlParameter[5];
+            SqlParameter[] arParames = new SqlParameter[9];
 
 
             arParames[0] = new SqlParameter("@ArticleId", SqlDbType.Int);
@@ -103,14 +103,26 @@ namespace QxsqDAL
             arParames[1] = new SqlParameter("@ArticleTitle", SqlDbType.VarChar, 500);
             arParames[1].Value = articleDto.ArticleTitle;
 
-            arParames[2] = new SqlParameter("@ArticleImg", SqlDbType.VarChar, 500);
-            arParames[2].Value = articleDto.ArticleImg;
+            arParames[2] = new SqlParameter("@ArticleClass", SqlDbType.VarChar, 500);
+            arParames[2].Value = articleDto.ArticleClass;
 
-            arParames[3] = new SqlParameter("@ArticleContent", SqlDbType.Text);
-            arParames[3].Value = articleDto.ArticleContent;
+            arParames[3] = new SqlParameter("@ArticleImg", SqlDbType.VarChar, 500);
+            arParames[3].Value = articleDto.ArticleImg;
 
-            arParames[4] = new SqlParameter("@ArticleDateTime", SqlDbType.DateTime);
-            arParames[4].Value = articleDto.ArticleDateTime;
+            arParames[4] = new SqlParameter("@ArticleContent", SqlDbType.Text);
+            arParames[4].Value = articleDto.ArticleContent;
+
+            arParames[5] = new SqlParameter("@ArticleDateTime", SqlDbType.DateTime);
+            arParames[5].Value = articleDto.ArticleDateTime;
+
+            arParames[6] = new SqlParameter("@ArticleTop", SqlDbType.Bit);
+            arParames[6].Value = articleDto.ArticleTop;
+
+            arParames[7] = new SqlParameter("@ArticleHot", SqlDbType.Bit);
+            arParames[7].Value = articleDto.ArticleHot;
+
+            arParames[8] = new SqlParameter("@ArticleImportant", SqlDbType.Bit);
+            arParames[8].Value = articleDto.ArticleImportant;
 
 
             return arParames;
@@ -125,6 +137,7 @@ namespace QxsqDAL
 
             articleDto.ArticleId = int.Parse(dr["ArticleId"].ToString());
             articleDto.ArticleTitle = dr["ArticleTitle"].ToString();
+            articleDto.ArticleClass = dr["ArticleClass"].ToString();
             articleDto.ArticleImg = dr["ArticleImg"].ToString();
 
             articleDto.ArticleContent = dr["ArticleContent"].ToString();
@@ -143,6 +156,7 @@ namespace QxsqDAL
 
             articleDto.ArticleId = int.Parse(dr["ArticleId"].ToString());
             articleDto.ArticleTitle = dr["ArticleTitle"].ToString();
+            articleDto.ArticleClass = dr["ArticleClass"].ToString();
             articleDto.ArticleImg = dr["ArticleImg"].ToString();
 
             articleDto.ArticleContent = dr["ArticleContent"].ToString();
