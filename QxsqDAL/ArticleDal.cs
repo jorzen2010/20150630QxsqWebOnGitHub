@@ -11,26 +11,26 @@ using Common;
 
 namespace QxsqDAL
 {
-    public class MokuaiDal
+    public class ArticleDal
     {
 
         #region 模块添加
 
-        public static void AddMokuai(MokuaiDto MokuaiDto)
+        public static void AddArticle(ArticleDto ArticleDto)
         {
 
-            SqlParameter[] arParames = MokuaiDal.getParameters(MokuaiDto);
+            SqlParameter[] arParames = ArticleDal.getParameters(ArticleDto);
 
-            SqlHelper.ExecuteNonQuery(CommonDal.ConnectionString, CommandType.StoredProcedure, "CreateMokuai", arParames);
+            SqlHelper.ExecuteNonQuery(CommonDal.ConnectionString, CommandType.StoredProcedure, "CreateArticle", arParames);
 
         }
         #endregion
 
         #region 获取一个模块DTO
 
-        public static MokuaiDto GetOneMokuai(string table,string strwhere)
+        public static ArticleDto GetOneArticle(string table,string strwhere)
         {
-            MokuaiDto mokuaiDto = new MokuaiDto();
+            ArticleDto ArticleDto = new ArticleDto();
 
             SqlParameter[] arParames = new SqlParameter[2];
             arParames[0] = new SqlParameter("@table ", SqlDbType.VarChar, 200);
@@ -46,12 +46,12 @@ namespace QxsqDAL
             foreach (DataRow dr in dt.Rows)
             {
 
-                mokuaiDto = MokuaiDal.getDataRowToMokuaiDto(dr);
+                ArticleDto = ArticleDal.getDataRowToArticleDto(dr);
 
             }
 
 
-            return mokuaiDto;
+            return ArticleDto;
 
 
 
@@ -59,15 +59,15 @@ namespace QxsqDAL
         #endregion
 
         #region 获取模块List数据
-        public static List<MokuaiDto> GetMokuaiList(string strwhere)
+        public static List<ArticleDto> GetArticleList(string strwhere)
         {
-            List<MokuaiDto> gamelist = new List<MokuaiDto>();
+            List<ArticleDto> articlelist = new List<ArticleDto>();
 
 
 
             SqlParameter[] arParames = new SqlParameter[2];
             arParames[0] = new SqlParameter("@table ", SqlDbType.VarChar, 200);
-            arParames[0].Value = "QxsqMokuai";
+            arParames[0].Value = "QxsqArticle";
 
             arParames[1] = new SqlParameter("@Where ", SqlDbType.VarChar, 8000);
             arParames[1].Value = strwhere;
@@ -77,40 +77,40 @@ namespace QxsqDAL
             dt = ds.Tables[0];
             foreach (DataRow dr in dt.Rows)
             {
-                MokuaiDto MokuaiDto = new MokuaiDto();
+                ArticleDto ArticleDto = new ArticleDto();
 
-                MokuaiDto = MokuaiDal.getDataRowToMokuaiDto(dr);
+                ArticleDto = ArticleDal.getDataRowToArticleDto(dr);
 
 
-                gamelist.Add(MokuaiDto);
+                articlelist.Add(ArticleDto);
 
             }
 
-            return gamelist;
+            return articlelist;
 
         }
         #endregion
 
         #region 将DTO映射成数据库参数
-        private static SqlParameter[] getParameters(MokuaiDto MokuaiDto)
+        private static SqlParameter[] getParameters(ArticleDto articleDto)
         {
             SqlParameter[] arParames = new SqlParameter[5];
 
 
-            arParames[0] = new SqlParameter("@MokuaiId", SqlDbType.Int);
-            arParames[0].Value = MokuaiDto.MokuaiId;
+            arParames[0] = new SqlParameter("@ArticleId", SqlDbType.Int);
+            arParames[0].Value = articleDto.ArticleId;
 
-            arParames[1] = new SqlParameter("@MokuaiTitle", SqlDbType.VarChar, 500);
-            arParames[1].Value = MokuaiDto.MokuaiTitle;
+            arParames[1] = new SqlParameter("@ArticleTitle", SqlDbType.VarChar, 500);
+            arParames[1].Value = articleDto.ArticleTitle;
 
-            arParames[2] = new SqlParameter("@MokuaiImg", SqlDbType.VarChar, 500);
-            arParames[2].Value = MokuaiDto.MokuaiImg;
+            arParames[2] = new SqlParameter("@ArticleImg", SqlDbType.VarChar, 500);
+            arParames[2].Value = articleDto.ArticleImg;
 
-            arParames[3] = new SqlParameter("@MokuaiContent", SqlDbType.Text);
-            arParames[3].Value = MokuaiDto.MokuaiContent;
+            arParames[3] = new SqlParameter("@ArticleContent", SqlDbType.Text);
+            arParames[3].Value = articleDto.ArticleContent;
 
-            arParames[4] = new SqlParameter("@MokuaiDateTime", SqlDbType.DateTime);
-            arParames[4].Value = MokuaiDto.MokuaiDateTime;
+            arParames[4] = new SqlParameter("@ArticleDateTime", SqlDbType.DateTime);
+            arParames[4].Value = articleDto.ArticleDateTime;
 
 
             return arParames;
@@ -119,44 +119,43 @@ namespace QxsqDAL
         #endregion
 
         #region 将数据集映射成DTO
-        private static MokuaiDto getDataRowToMokuaiDto(DataRow dr)
+        private static ArticleDto getDataRowToArticleDto(DataRow dr)
         {
-            MokuaiDto mokuaiDto = new MokuaiDto();
+            ArticleDto articleDto = new ArticleDto();
 
-            mokuaiDto.MokuaiId = int.Parse(dr["MokuaiId"].ToString());
-            mokuaiDto.MokuaiTitle = dr["MokuaiTitle"].ToString();
-            mokuaiDto.MokuaiImg = dr["MokuaiImg"].ToString();
+            articleDto.ArticleId = int.Parse(dr["ArticleId"].ToString());
+            articleDto.ArticleTitle = dr["ArticleTitle"].ToString();
+            articleDto.ArticleImg = dr["ArticleImg"].ToString();
 
-            mokuaiDto.MokuaiContent = dr["MokuaiContent"].ToString();
+            articleDto.ArticleContent = dr["ArticleContent"].ToString();
 
-            mokuaiDto.MokuaiDateTime = DateTime.Parse(dr["MokuaiDateTime"].ToString());
+            articleDto.ArticleDateTime = DateTime.Parse(dr["ArticleDateTime"].ToString());
 
-            return mokuaiDto;
+            return articleDto;
         }
 
         #endregion
 
         #region 将数据集映射成DTO
-        private static MokuaiDto getDataReaderToMokuaiDto(SqlDataReader dr)
+        private static ArticleDto getDataReaderToArticleDto(SqlDataReader dr)
         {
-            MokuaiDto mokuaiDto = new MokuaiDto();
+            ArticleDto articleDto = new ArticleDto();
 
-            mokuaiDto.MokuaiId = int.Parse(dr["MokuaiId"].ToString());
-            mokuaiDto.MokuaiTitle = dr["MokuaiTitle"].ToString();
-            mokuaiDto.MokuaiImg = dr["MokuaiImg"].ToString();
+            articleDto.ArticleId = int.Parse(dr["ArticleId"].ToString());
+            articleDto.ArticleTitle = dr["ArticleTitle"].ToString();
+            articleDto.ArticleImg = dr["ArticleImg"].ToString();
 
-            mokuaiDto.MokuaiContent = dr["MokuaiContent"].ToString();
+            articleDto.ArticleContent = dr["ArticleContent"].ToString();
 
-            mokuaiDto.MokuaiDateTime = DateTime.Parse(dr["MokuaiDateTime"].ToString());
+            articleDto.ArticleDateTime = DateTime.Parse(dr["ArticleDateTime"].ToString());
 
-            return mokuaiDto;
+            return articleDto;
         }
 
         #endregion
 
-
-        #region 删除一个Mokuai对象DTO
-        public static void DeleteMokuaiDto(string table, string strwhere)
+        #region 删除一个Article对象DTO
+        public static void DeleteArticleDto(string table, string strwhere)
         {
 
 
@@ -174,13 +173,13 @@ namespace QxsqDAL
         }
         #endregion
         
-        #region 更新一个Mokuai
-        public static void UpdateMokuai(MokuaiDto MokuaiDto)
+        #region 更新一个Article
+        public static void UpdateArticle(ArticleDto ArticleDto)
         {
 
-            SqlParameter[] arParames = MokuaiDal.getParameters(MokuaiDto);
+            SqlParameter[] arParames = ArticleDal.getParameters(ArticleDto);
 
-            SqlHelper.ExecuteNonQuery(CommonDal.ConnectionString, CommandType.StoredProcedure, "UpdateMokuai", arParames);
+            SqlHelper.ExecuteNonQuery(CommonDal.ConnectionString, CommandType.StoredProcedure, "UpdateArticle", arParames);
 
 
         }
@@ -188,7 +187,7 @@ namespace QxsqDAL
         #endregion
         
         #region 取得单表的查询并进行分页数据
-        public static Pager GetMokuaiPage(Pager pager, string strwhere, string table)
+        public static Pager GetArticlePage(Pager pager, string strwhere, string table)
         {
             SqlParameter[] arParms = new SqlParameter[9];
             //@tbname   --要分页显示的表名
@@ -197,7 +196,7 @@ namespace QxsqDAL
 
             // @FieldKey --用于定位记录的主键(惟一键)字段,可以是逗号分隔的多个字段
             arParms[1] = new SqlParameter("@FieldKey", SqlDbType.NVarChar, 40);
-            arParms[1].Value = "MokuaiId";
+            arParms[1].Value = "ArticleId";
 
             //@PageCurrent --要显示的页码
             arParms[2] = new SqlParameter("@PageCurrent", SqlDbType.Int);
@@ -214,7 +213,7 @@ namespace QxsqDAL
             //@FieldOrder --以逗号分隔的排序字段列表,可以指定在字段后面指定DESC/ASC用于指定排序顺序
 
             arParms[5] = new SqlParameter("@FieldOrder", SqlDbType.NVarChar, 500);
-            arParms[5].Value = "MokuaiId desc";
+            arParms[5].Value = "ArticleId desc";
 
             //@Where   --查询条件
             arParms[6] = new SqlParameter("@Where", SqlDbType.VarChar, 8000);
@@ -228,15 +227,15 @@ namespace QxsqDAL
             arParms[8] = new SqlParameter("@RecordCount", SqlDbType.Int);
             arParms[8].Direction = ParameterDirection.Output;
 
-            MokuaiDto MokuaiDto = null;
-            List<MokuaiDto> list = new List<MokuaiDto>();
+            ArticleDto articleDto = null;
+            List<ArticleDto> list = new List<ArticleDto>();
             DataTable dt = null;
             DataSet ds = SqlHelper.ExecuteDataset(CommonDal.ConnectionString, CommandType.StoredProcedure, "sp_AspNetPageView", arParms);
             dt = ds.Tables[0];
             foreach (DataRow dr in dt.Rows)
             {
-                MokuaiDto = MokuaiDal.getDataRowToMokuaiDto(dr);
-                list.Add(MokuaiDto);
+                articleDto = ArticleDal.getDataRowToArticleDto(dr);
+                list.Add(articleDto);
             }
 
             var totalItems = (int)arParms[8].Value;

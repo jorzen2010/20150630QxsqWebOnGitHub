@@ -165,6 +165,8 @@
     <Compile Include="Attributes\HeadPhotoAttribute.cs" />
     <Compile Include="Attributes\SkyEditorAttribute.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\BaseController.cs" />
+    <Compile Include="Controllers\ArticleClassController.cs" />
     <Compile Include="Controllers\ArticleController.cs" />
     <Compile Include="Controllers\MokuaiController.cs" />
     <Compile Include="Controllers\FileController.cs" />
@@ -175,6 +177,8 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\ArticleClassModels.cs" />
+    <Compile Include="Models\ArticleModels.cs" />
     <Compile Include="Models\MokuaiModels.cs" />
     <Compile Include="Models\EditorModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -931,6 +935,12 @@
     <Content Include="umeditor\third-party\mathquill\font\Symbola.otf" />
     <Content Include="umeditor\third-party\mathquill\font\Symbola.ttf" />
     <Content Include="umeditor\third-party\mathquill\font\Symbola.woff" />
+    <Content Include="Views\ArticleClass\ArticleClassIndex.cshtml" />
+    <Content Include="Views\ArticleClass\ArticleClassEdit.cshtml" />
+    <Content Include="Views\ArticleClass\ArticleClassAdd.cshtml" />
+    <Content Include="Views\Article\ArticleAdd.cshtml" />
+    <Content Include="Views\Article\ArticleEdit.cshtml" />
+    <Content Include="Views\Article\ArticleIndex.cshtml" />
     <None Include="Views\Home\Login.cshtml" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -960,7 +970,6 @@
     <Content Include="Views\Shared\_Layout - fenye.cshtml" />
     <Content Include="Views\Shared\_HeaderPartial.cshtml" />
     <Content Include="Views\Shared\_MenuPartial.cshtml" />
-    <Content Include="Views\Article\ArticleAdd.cshtml" />
     <Content Include="Views\Home\Mokuai.cshtml" />
     <Content Include="Views\Home\NewsList.cshtml" />
     <Content Include="Views\Home\Setting.cshtml" />
@@ -976,10 +985,12 @@
     <Content Include="Views\Mokuai\MokuaiAdd.cshtml" />
     <Content Include="Views\Mokuai\MokuaiIndex.cshtml" />
     <Content Include="Views\Mokuai\MokuaiEdit.cshtml" />
+    <Content Include="Views\Shared\Redirect.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="umeditor\upload\" />
+    <Folder Include="Views\Base\" />
     <Folder Include="Views\File\" />
   </ItemGroup>
   <ItemGroup>

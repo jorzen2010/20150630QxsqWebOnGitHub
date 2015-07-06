@@ -1,6 +1,6 @@
-﻿@model QxsqWebAdmin.Models.ArticleAddViewModel
+﻿@model QxsqWebAdmin.Models.ArticleEditViewModel
 @{
-    ViewBag.Title = "新增文章";
+    ViewBag.Title = "文章编辑";
 }
 
 <link href="/umeditor/themes/default/css/umeditor.css" type="text/css" rel="stylesheet">
@@ -13,9 +13,6 @@
     <!-- Content Header (Page header) -->
     <!-- Main content -->
     <section class="content">
-
-
-
 
         <!-- Small boxes (Stat box) -->
         <!-- /.row -->
@@ -36,10 +33,10 @@
                         <h3 class="box-title">@ViewBag.Title</h3>
                     </div><!-- /.box-header -->
                     <!-- form start -->
-                  @using (Html.BeginForm("ArticleInsert", "Article", FormMethod.Post))
+                  @using (Html.BeginForm("ArticleUpdate", "Article", FormMethod.Post))
     {     
-                     
-                       @Html.ValidationSummary(true)
+                      @Html.HiddenFor(model => model.ArticleId)
+                        @Html.ValidationSummary(true)
                       <div class="box-body">
                             <div class="form-group">
 

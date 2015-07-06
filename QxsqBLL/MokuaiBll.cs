@@ -34,9 +34,9 @@ namespace QxsqBLL
         #endregion
 
         #region 新增一个
-        public static void AddMokuai(MokuaiDto MokuaiDto)
+        public static void AddMokuai(MokuaiDto mokuaiDto)
         {
-            MokuaiDal.AddMokuai(MokuaiDto);
+            MokuaiDal.AddMokuai(mokuaiDto);
      
         }
 
@@ -58,9 +58,9 @@ namespace QxsqBLL
 
         #region 更新Mokuai
 
-        public static void UpdateMokuaiDto(MokuaiDto MokuaiDto)
+        public static void UpdateMokuaiDto(MokuaiDto mokuaiDto)
         {
-            MokuaiDal.UpdateMokuai(MokuaiDto);
+            MokuaiDal.UpdateMokuai(mokuaiDto);
         }
 
         #endregion

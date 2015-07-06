@@ -10,10 +10,10 @@ using QxsqDTO;
 
 namespace QxsqWebAdmin.Controllers
 {
-    public class EditorController : Controller
+    public class EditorController : BaseController
     {
       
-      #region 网站管理员列表页
+        #region 网站管理员列表页
        
         public ActionResult EditorIndex(int? p)
         {
@@ -43,6 +43,7 @@ namespace QxsqWebAdmin.Controllers
 
         }
         #endregion
+
         #region 网站管理员编辑
         public ActionResult EditorEdit(int EditorId)
         {
@@ -62,6 +63,7 @@ namespace QxsqWebAdmin.Controllers
         }
 
         #endregion
+
         #region 网站管理员新增动作
         [HttpPost]
         public ActionResult EditorInsert(EditorAddViewModel model)
@@ -75,12 +77,13 @@ namespace QxsqWebAdmin.Controllers
 
             EditorBll.AddEditor(editorDto);
 
-
-            return RedirectToAction("EditorIndex");
+            return RedirectTo("/Editor/EditorIndex", "网站管理员添加成功了");
+           // return RedirectToAction("EditorIndex");
 
 
         }
         #endregion
+
         #region 网站管理员更新动作
         [HttpPost]
         public ActionResult EditorUpdate(EditorEditViewModel model)
@@ -102,6 +105,7 @@ namespace QxsqWebAdmin.Controllers
         }
 
         #endregion
+
         #region 网站管理员删除动作
         public ActionResult EditorDelete(int EditorId)
         {

@@ -14,7 +14,7 @@ namespace QxsqWebAdmin.Controllers
     {
       
 
-        #region 网站管理员添加
+        #region 模块添加
         public ActionResult MokuaiAdd()
         {
             return View();
@@ -22,7 +22,7 @@ namespace QxsqWebAdmin.Controllers
         }
         #endregion
 
-        #region 网站管理员新增动作
+        #region 模块新增动作
         [HttpPost]
         [ValidateInput(false)]
         public ActionResult MokuaiInsert(MokuaiAddViewModel model)
@@ -30,7 +30,9 @@ namespace QxsqWebAdmin.Controllers
             MokuaiDto mokuaiDto = new MokuaiDto();
 
             mokuaiDto.MokuaiTitle = model.MokuaiTitle;
+
             mokuaiDto.MokuaiImg = model.MokuaiImg;
+
             mokuaiDto.MokuaiContent = model.MokuaiContent;
             mokuaiDto.MokuaiDateTime = System.DateTime.Now;
 
@@ -42,7 +44,6 @@ namespace QxsqWebAdmin.Controllers
 
         }
         #endregion
-
 
         #region 模块列表页
 
@@ -101,7 +102,7 @@ namespace QxsqWebAdmin.Controllers
 
         #endregion
 
-        #region 网站管理员更新动作
+        #region 模块更新动作
         [HttpPost]
         [ValidateInput(false)]
         public ActionResult MokuaiUpdate(MokuaiEditViewModel model)

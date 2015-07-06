@@ -22,6 +22,7 @@ namespace QxsqWebAdmin.Models
         public bool RememberMe { get; set; }
     }
     #endregion
+
     #region 网站管理员添加模型
     public class EditorAddViewModel
     {
@@ -46,6 +47,7 @@ namespace QxsqWebAdmin.Models
     
     }
     #endregion
+
     #region 网站管理员更新模型
     public class EditorEditViewModel
     {

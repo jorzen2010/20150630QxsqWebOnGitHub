@@ -41,6 +41,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CommonBll.cs" />
+    <Compile Include="ArticleClassBll.cs" />
+    <Compile Include="ArticleBll.cs" />
     <Compile Include="MokuaiBll.cs" />
     <Compile Include="EditorBll.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

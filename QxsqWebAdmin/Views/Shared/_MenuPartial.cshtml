@@ -33,8 +33,13 @@
                 
             </li>
             <li>
-                <a href="@Url.Action("Mokuai","Home")">
+                <a href="@Url.Action("MokuaiIndex","Mokuai")">
                     <i class="fa fa-th"></i> <span>模块设置</span>
+                </a>
+            </li>
+            <li>
+                <a href="@Url.Action("ArticleIndex", "Article")">
+                    <i class="fa fa-th"></i> <span>文章中心</span>
                 </a>
             </li>
             <!-- 留作备用
@@ -43,7 +48,7 @@
                     <i class="fa fa-th"></i> <span>预约挂号</span> <small class="badge pull-right bg-green">8</small>
                 </a>
             </li>
-            -->
+            
             <li class="treeview">
                 <a href="#">
                     <i class="fa fa-bar-chart-o"></i>
@@ -56,7 +61,7 @@
                 </ul>
             </li>
 
-          
+          -->
 
             <li class="treeview">
                 <a href="#">
@@ -66,7 +71,7 @@
                 </a>
                 <ul class="treeview-menu">
                     <li><a href="@Url.Action("EditorIndex", "Editor")"><i class="fa fa-angle-double-right"></i> 网站管理员设置</a></li>
-                    <li><a href="@Url.Action("NewsList", "Home")"><i class="fa fa-angle-double-right"></i>  文章分类设置</a></li>
+                    <li><a href="@Url.Action("ArticleClassIndex", "ArticleClass")"><i class="fa fa-angle-double-right"></i>  文章分类设置</a></li>
                    <!-- 留作备用  
                     <li><a href="@Url.Action("NewsList","Home")"><i class="fa fa-angle-double-right"></i>  全科医生设置</a></li>
                     <li><a href="@Url.Action("NewsList","Home")"><i class="fa fa-angle-double-right"></i>  健康档案类别设置</a></li>
