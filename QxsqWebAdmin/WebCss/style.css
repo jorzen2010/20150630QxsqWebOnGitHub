@@ -38,7 +38,7 @@ body{
 }
 .top-header-left p{
 	font-family: 'Microsoft YaHei', sans-serif;
-	color: #007DAD;
+	color: #00917e;
 	font-size: 0.875em;
 	background: url(../images/phone.png) no-repeat;
 	padding-left: 18px;
@@ -51,7 +51,7 @@ body{
 }
 .right-left ul li a{
 	font-family: 'Microsoft YaHei', sans-serif;
-	color:#007DAD;
+	color:#00917e;
 	font-size:0.875em;
 	transition: 0.5s ease;
 	-o-transition: 0.5s ease;
@@ -102,7 +102,7 @@ body{
 }
 /*---start-top-nav----*/
 .top-nav{
-	background:#007DAD;
+	background:#00917e;
 }
 .top-nav ul li{
 	display:inline-block;
@@ -120,7 +120,7 @@ body{
 	font-size: 1em;
 	font-family: 'Microsoft YaHei', sans-serif;
 	color: #FFF;
-	background: #007DAD;
+	background: #00917e;
 	text-transform: uppercase;
 	padding: 1em 2em;
 	display: block;
@@ -158,7 +158,7 @@ body{
 }
 .grid-button{
 	font-family: 'Microsoft YaHei', sans-serif;
-	color: #007DAD;
+	color: #00917e;
 	text-transform: uppercase;
 	margin: 0.5em 0;
 	display: block;
@@ -221,7 +221,7 @@ body{
 	display: block;
 	font-family: 'Microsoft YaHei', sans-serif;
 	font-size: 1em;
-	color: #007DAD;
+	color: #00917e;
 	padding: 2px 0px 1px 0px;
 	transition: 0.5s ease;
 	-o-transition: 0.5s ease;
@@ -231,7 +231,7 @@ body{
 	display: block;
 	font-family: 'Microsoft YaHei', sans-serif;
 	font-size: 1em;
-	color: #007DAD;
+	color: #00917e;
 	padding: 2px 0px 5px 0px;
 	transition: 0.5s ease;
 	-o-transition: 0.5s ease;
@@ -262,7 +262,7 @@ body{
 }
 .images_1_of_3 .button a{
 	    font-family: 'Microsoft YaHei', sans-serif;
-		color: #007DAD;
+		color: #00917e;
 		text-transform: uppercase;
 		margin: 0.5em 0;
 		display: block;
@@ -340,10 +340,10 @@ body{
 .footer-grid span{
 	font-size:1.2em;
 	font-family: 'Microsoft YaHei', sans-serif;
-	color:#007DAD;
+	color:#00917e;
 }
 .footer-grid ul li a:hover{
-	color:#007DAD;
+	color:#00917e;
 }
 .footer-grid h3{
 	font-family: 'Microsoft YaHei', sans-serif;
@@ -373,7 +373,7 @@ body{
 	-webkit-transition: 0.5s ease;
 }
 .copy-tight p a:hover{
-	color:#007DAD;
+	color:#00917e;
 }
 /*---start-about----*/
 .about-topgrid1{
@@ -476,7 +476,7 @@ body{
 	display: block;
 	font-family: 'Microsoft YaHei', sans-serif;
 	font-size: 1em;
-	color:#007DAD;
+	color:#00917e;
 	padding: 2px 0px 5px 0px;
 	transition: 0.5s ease;
 	-o-transition: 0.5s ease;
@@ -540,7 +540,7 @@ body{
 	display: block;
 	font-family: 'Microsoft YaHei', sans-serif;
 	font-size: 1em;
-	color:#007DAD;
+	color:#00917e;
 	padding: 8px 0px 8px 0px;
 	transition: 0.5s ease;
 	-o-transition: 0.5s ease;
@@ -555,7 +555,7 @@ body{
 	color: #777;
 }
 .images_1_of_4  p a{
-	color:#007DAD;
+	color:#00917e;
 }
 .images_1_of_4  p a:hover{
 	color:#797979;
@@ -677,7 +677,7 @@ body{
 }
 .service-content ul li p a{
 	font-size: 1.2em;
-	color: #007DAD;
+	color: #00917e;
 	font-family: 'Microsoft YaHei', sans-serif;
 	display: block;
 }
@@ -704,7 +704,7 @@ body{
 	display: block;
 	font-family: 'Microsoft YaHei', sans-serif;
 	font-size: 1em;
-	color:#007DAD;
+	color:#00917e;
 	padding: 2px 0px 5px 0px;
 	transition: 0.5s ease;
 	-o-transition: 0.5s ease;
@@ -798,7 +798,7 @@ body{
 }
 .contact-form input[type="submit"]{
 	font-family: 'Microsoft YaHei', sans-serif;
-	color: #007DAD;
+	color: #00917e;
 	text-transform: uppercase;
 	margin: 0.5em 0;
 	display: block;

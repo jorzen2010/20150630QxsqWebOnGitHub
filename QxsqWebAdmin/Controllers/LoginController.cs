@@ -24,7 +24,7 @@ namespace QxsqWebAdmin.Controllers
             return View();
         }
 
-        public ActionResult Logon(string username ,string password)
+        public JsonResult Logon(string username, string password)
         {
             string table = "QxsqEditor";
             string strwhere = "EditorUsername='" + username + "' and EditorPassword='" + CommonTools.ToMd5(password) + "'";
@@ -54,6 +54,7 @@ namespace QxsqWebAdmin.Controllers
                 var cookieId = new HttpCookie("EditorId", editorDto.EditorId.ToString());
                 System.Web.HttpContext.Current.Response.SetCookie(cookie);
                 System.Web.HttpContext.Current.Response.SetCookie(cookieId);
+
 
                 return Json(json, JsonRequestBehavior.AllowGet);
             }
