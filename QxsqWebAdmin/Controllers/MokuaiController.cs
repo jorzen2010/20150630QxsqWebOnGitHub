@@ -10,7 +10,7 @@ using QxsqDTO;
 
 namespace QxsqWebAdmin.Controllers
 {
-    public class MokuaiController : Controller
+    public class MokuaiController : BaseController
     {
       
 

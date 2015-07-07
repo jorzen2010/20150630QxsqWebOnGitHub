@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - 曲线社区卫生服务中心</title>
+    
+    <link href='/WebCss/style.css' rel='stylesheet' type='text/css'>
+    <link href='/WebCss/responsiveslides.css' rel='stylesheet' type='text/css'>
+
+
+
+</head>
+<body>
+    <!---start-wrap---->
+    @Html.Partial("_PartialHeaderWeb")
+    @RenderBody()
+    @Html.Partial("_PartialFooterWeb")
+    @Scripts.Render("~/bundles/jquery")
+
+    @RenderSection("scripts", required: false)
+
+    <script language="javascript" type="text/javascript">
+
+
+        var path = window.location.href;
+        var host = 'http://' + window.location.host;
+
+        $('#qxsqmenu li').each(function () {
+
+            if (host + $(this).find('a').attr('href') == path) {
+
+                $(this).addClass("active");
+
+            }
+
+        });
+
+     
+
+
+
+
+    </script>
+
+</body>
+</html>

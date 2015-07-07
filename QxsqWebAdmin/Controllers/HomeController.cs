@@ -8,7 +8,7 @@ using QxsqBLL;
 
 namespace QxsqWebAdmin.Controllers
 {
-    public class HomeController : Controller
+    public class HomeController : BaseController
     {
         public ActionResult Index()
         {

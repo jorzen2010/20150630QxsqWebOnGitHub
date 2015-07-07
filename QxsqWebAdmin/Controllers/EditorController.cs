@@ -77,8 +77,8 @@ namespace QxsqWebAdmin.Controllers
 
             EditorBll.AddEditor(editorDto);
 
-            return RedirectTo("/Editor/EditorIndex", "网站管理员添加成功了");
-           // return RedirectToAction("EditorIndex");
+           return RedirectTo("/Editor/EditorIndex", "网站管理员添加成功了");
+           //return RedirectToAction("EditorIndex");
 
 
         }

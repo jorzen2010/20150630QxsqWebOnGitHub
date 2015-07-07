@@ -41,5 +41,18 @@ namespace QxsqWebAdmin.Controllers
             };
             return Json(json, JsonRequestBehavior.AllowGet);
         }
+
+        protected override void OnActionExecuting(ActionExecutingContext filterContext)
+        {
+            if (filterContext.HttpContext.Request.Cookies["EditorId"] == null)
+            {
+                if (this.RouteData.Values["Controller"].ToString() != "Login")
+                {
+                    //跳转到登陆页
+                    filterContext.Result = new RedirectResult("/Login/Login");
+                }
+            }
+            base.OnActionExecuting(filterContext);
+        }
 	}
 }

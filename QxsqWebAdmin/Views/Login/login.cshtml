@@ -26,7 +26,13 @@
     <body class="bg-black">
 
         <div class="form-box" id="login-box">
-            <div class="header">登录</div>
+            <div class="header">登录<br>
+            <div id="EditorLoginAlert">
+
+    请输入用户名和密码进行登录
+</div>
+            </div>
+            
 @using (Html.BeginForm("Logon", "Login", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post))
             {
             
@@ -45,7 +51,7 @@
                     </div>
                 </div>
                 <div class="footer">                                                               
-                    <button type="submit" class="btn bg-olive btn-block">立刻登录</button>  
+                    <button type="submit" class="btn bg-olive btn-block" id="EditorLoginButton">立刻登录</button>  
                     
                     <p><a href="#">忘记密码？</a></p>
                     
@@ -69,6 +75,45 @@
         <script src="/js/jquery.min.js"></script>
         <!-- Bootstrap -->
         <script src="/js/bootstrap.min.js" type="text/javascript"></script>        
+        <script language="javascript" type="text/javascript">
 
+            $('#EditorLoginButton').on('click', function () {
+
+                if ($('#Password').val() == '') {
+                    $('#EditorLoginAlert').html('你傻吧？密码呢？？?');
+                }
+
+
+                if ($('#UserName').val() == '') {
+                    // alert('用户名不能为空');
+                    $('#EditorLoginAlert').html('你傻吧？用户名都不写就想登录');
+                }
+
+
+                if ($('#UserName').val() != '' && $('#Password').val() != '') {
+
+                    var url = '/Login/Logon?username=' + $('#UserName').val() + '&password=' + $('#Password').val();
+
+                    $.getJSON(url, function (data) {
+
+                        switch (data.MessageStatus) {
+
+                            case "1":
+                                $("#EditorLoginAlert").html(data.MessageInfo);
+                                top.location = '/Home/Index';
+                                break;
+                            case "0": $("#EditorLoginAlert").html(data.MessageInfo);
+                                break;
+
+                        }
+
+
+                    });
+                }
+
+
+            });
+
+        </script>
     </body>
 </html>
