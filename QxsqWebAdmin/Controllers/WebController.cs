@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using QxsqDTO;
+using QxsqBLL;
 
 namespace QxsqWebAdmin.Controllers
 {
@@ -20,8 +22,18 @@ namespace QxsqWebAdmin.Controllers
             return View();
         }
 
-        public ActionResult Article()
+        public ActionResult Article(int id)
         {
+            string table = "QxsqArticle";
+
+            string strwhere = "ArticleId=" + id.ToString();
+
+
+            ArticleDto articleDto = ArticleBll.GetOneArticleDto(table, strwhere);
+
+
+            ViewData.Model = articleDto;
+
             return View();
         }
 

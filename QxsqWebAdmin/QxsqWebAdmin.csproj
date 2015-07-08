@@ -854,17 +854,6 @@
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\_references.js" />
-    <Content Include="simditor\images\image.png" />
-    <Content Include="simditor\scripts\hotkeys.js" />
-    <Content Include="simditor\scripts\hotkeys.min.js" />
-    <Content Include="simditor\scripts\jquery.min.js" />
-    <Content Include="simditor\scripts\module.js" />
-    <Content Include="simditor\scripts\module.min.js" />
-    <Content Include="simditor\scripts\simditor.js" />
-    <Content Include="simditor\scripts\simditor.min.js" />
-    <Content Include="simditor\scripts\uploader.js" />
-    <Content Include="simditor\scripts\uploader.min.js" />
-    <Content Include="simditor\styles\simditor.css" />
     <Content Include="umeditor\dialogs\emotion\emotion.css" />
     <Content Include="umeditor\dialogs\emotion\emotion.js" />
     <Content Include="umeditor\dialogs\emotion\images\0.gif" />
@@ -943,9 +932,6 @@
     <Content Include="umeditor\umeditor.js" />
     <Content Include="umeditor\umeditor.min.js" />
     <Content Include="Views\Home\AddEditor.cshtml" />
-    <Content Include="simditor\styles\editor.scss" />
-    <Content Include="simditor\styles\fonticon.scss" />
-    <Content Include="simditor\styles\simditor.scss" />
     <Content Include="Views\Home\Index - 复制.cshtml" />
     <Content Include="Views\Home\AddNews.cshtml" />
     <Content Include="umeditor\net\getContent.ashx" />

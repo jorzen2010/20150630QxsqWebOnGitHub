@@ -146,6 +146,10 @@ namespace QxsqDAL
             articleDto.ArticleContent = dr["ArticleContent"].ToString();
             articleDto.ArticleInfo = dr["ArticleInfo"].ToString();
 
+            articleDto.ArticleHot = bool.Parse(dr["ArticleHot"].ToString());
+            articleDto.ArticleTop = bool.Parse(dr["ArticleTop"].ToString());
+            articleDto.ArticleImportant = bool.Parse(dr["ArticleImportant"].ToString());
+
             articleDto.ArticleDateTime = DateTime.Parse(dr["ArticleDateTime"].ToString());
 
             return articleDto;
@@ -165,6 +169,10 @@ namespace QxsqDAL
 
             articleDto.ArticleContent = dr["ArticleContent"].ToString();
             articleDto.ArticleInfo = dr["ArticleInfo"].ToString();
+
+            articleDto.ArticleHot = bool.Parse(dr["ArticleHot"].ToString());
+            articleDto.ArticleTop = bool.Parse(dr["ArticleTop"].ToString());
+            articleDto.ArticleImportant = bool.Parse(dr["ArticleImportant"].ToString());
 
             articleDto.ArticleDateTime = DateTime.Parse(dr["ArticleDateTime"].ToString());
 
