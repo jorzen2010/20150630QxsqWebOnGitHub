@@ -20,6 +20,17 @@ namespace QxsqWebAdmin.Controllers
             return View();
         }
 
+        public ActionResult Article()
+        {
+            return View();
+        }
+
+        public ActionResult MokuaiContent()
+        {
+            return View();
+        }
+
+
         public ActionResult Yiliaofuwu()
         {
             return View();

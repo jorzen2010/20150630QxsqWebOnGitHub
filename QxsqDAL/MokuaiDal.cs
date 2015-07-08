@@ -94,7 +94,7 @@ namespace QxsqDAL
         #region 将DTO映射成数据库参数
         private static SqlParameter[] getParameters(MokuaiDto MokuaiDto)
         {
-            SqlParameter[] arParames = new SqlParameter[5];
+            SqlParameter[] arParames = new SqlParameter[6];
 
 
             arParames[0] = new SqlParameter("@MokuaiId", SqlDbType.Int);
@@ -109,8 +109,11 @@ namespace QxsqDAL
             arParames[3] = new SqlParameter("@MokuaiContent", SqlDbType.Text);
             arParames[3].Value = MokuaiDto.MokuaiContent;
 
-            arParames[4] = new SqlParameter("@MokuaiDateTime", SqlDbType.DateTime);
-            arParames[4].Value = MokuaiDto.MokuaiDateTime;
+            arParames[4] = new SqlParameter("@MokuaiInfo", SqlDbType.Text);
+            arParames[4].Value = MokuaiDto.MokuaiInfo;
+
+            arParames[5] = new SqlParameter("@MokuaiDateTime", SqlDbType.DateTime);
+            arParames[5].Value = MokuaiDto.MokuaiDateTime;
 
 
             return arParames;
@@ -128,6 +131,7 @@ namespace QxsqDAL
             mokuaiDto.MokuaiImg = dr["MokuaiImg"].ToString();
 
             mokuaiDto.MokuaiContent = dr["MokuaiContent"].ToString();
+            mokuaiDto.MokuaiInfo = dr["MokuaiInfo"].ToString();
 
             mokuaiDto.MokuaiDateTime = DateTime.Parse(dr["MokuaiDateTime"].ToString());
 
@@ -146,6 +150,7 @@ namespace QxsqDAL
             mokuaiDto.MokuaiImg = dr["MokuaiImg"].ToString();
 
             mokuaiDto.MokuaiContent = dr["MokuaiContent"].ToString();
+            mokuaiDto.MokuaiInfo = dr["MokuaiInfo"].ToString();
 
             mokuaiDto.MokuaiDateTime = DateTime.Parse(dr["MokuaiDateTime"].ToString());
 

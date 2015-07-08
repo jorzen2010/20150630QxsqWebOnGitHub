@@ -44,7 +44,7 @@ namespace QxsqWebAdmin.Controllers
 
         protected override void OnActionExecuting(ActionExecutingContext filterContext)
         {
-            if (filterContext.HttpContext.Request.Cookies["EditorId"] == null)
+            if (filterContext.HttpContext.Request.Cookies["Editor"] == null)
             {
                 if (this.RouteData.Values["Controller"].ToString() != "Login")
                 {

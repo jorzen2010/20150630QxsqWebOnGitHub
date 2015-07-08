@@ -26,14 +26,14 @@
                 <li class="dropdown user user-menu">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                         <i class="glyphicon glyphicon-user"></i>
-                        <span>赵征 <i class="caret"></i></span>
+                        <span>@System.Web.HttpContext.Current.Request.Cookies["Editor"].Value <i class="caret"></i></span>
                     </a>
                     <ul class="dropdown-menu">
                         <!-- User image -->
                         <li class="user-header bg-light-blue">
                             <img src="/img/avatar3.png" class="img-circle" alt="User Image" />
                             <p>
-                                赵征- 网络管理员
+                                @System.Web.HttpContext.Current.Request.Cookies["Editor"].Value
                                 <small>2015年7月3日</small>
                             </p>
                         </li>
@@ -41,11 +41,12 @@
                         
                         <!-- Menu Footer-->
                         <li class="user-footer">
-                            <div class="pull-left">
+                           <!--  <div class="pull-left">
                                 <a href="#" class="btn btn-default btn-flat">个人设置</a>
                             </div>
+                               -->
                             <div class="pull-right">
-                                <a href="#" class="btn btn-default btn-flat">退出</a>
+                                <a href="/login/logout" class="btn btn-default btn-flat">退出</a>
                             </div>
                         </li>
                     </ul>

@@ -34,6 +34,7 @@ namespace QxsqWebAdmin.Controllers
             mokuaiDto.MokuaiImg = model.MokuaiImg;
 
             mokuaiDto.MokuaiContent = model.MokuaiContent;
+            mokuaiDto.MokuaiInfo = model.MokuaiInfo;
             mokuaiDto.MokuaiDateTime = System.DateTime.Now;
 
             MokuaiBll.AddMokuai(mokuaiDto);
@@ -85,13 +86,14 @@ namespace QxsqWebAdmin.Controllers
         {
             string table = "QxsqMokuai";
             string strwhere = "MokuaiId=" + MokuaiId;
-            MokuaiDto MokuaiDto = MokuaiBll.GetOneMokuaiDto(table, strwhere);
+            MokuaiDto mokuaiDto = MokuaiBll.GetOneMokuaiDto(table, strwhere);
 
             MokuaiEditViewModel model = new MokuaiEditViewModel();
 
-            model.MokuaiTitle = MokuaiDto.MokuaiTitle;
-            model.MokuaiImg = MokuaiDto.MokuaiImg;
-            model.MokuaiContent = MokuaiDto.MokuaiContent;
+            model.MokuaiTitle = mokuaiDto.MokuaiTitle;
+            model.MokuaiImg = mokuaiDto.MokuaiImg;
+            model.MokuaiContent = mokuaiDto.MokuaiContent;
+            model.MokuaiInfo=mokuaiDto.MokuaiInfo ;
 
             ViewBag.MokuaiContent = model.MokuaiContent;
 
@@ -114,6 +116,7 @@ namespace QxsqWebAdmin.Controllers
             mokuaiDto.MokuaiTitle = model.MokuaiTitle;
             mokuaiDto.MokuaiImg = model.MokuaiImg;
             mokuaiDto.MokuaiContent = model.MokuaiContent;
+            mokuaiDto.MokuaiInfo = model.MokuaiInfo;
             mokuaiDto.MokuaiDateTime = System.DateTime.Now;
 
             MokuaiBll.UpdateMokuaiDto(mokuaiDto);

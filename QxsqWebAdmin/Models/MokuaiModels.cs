@@ -21,6 +21,9 @@ namespace QxsqWebAdmin.Models
         public string MokuaiImg { get; set; }
 
         [Required]
+        [Display(Name = "模块简介")]
+        public string MokuaiInfo { get; set; }
+        [Required]
         [Display(Name = "模块内容")]
         public string MokuaiContent { get; set; }
 
@@ -46,6 +49,9 @@ namespace QxsqWebAdmin.Models
         [Display(Name = "模块图片")]
         [FileUpload("Course")]
         public string MokuaiImg { get; set; }
+        [Required]
+        [Display(Name = "模块简介")]
+        public string MokuaiInfo { get; set; }
 
         [Required]
         [Display(Name = "模块内容")]

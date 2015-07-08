@@ -14,6 +14,7 @@ namespace QxsqDTO
         public string ArticleClass { get; set; }
         public string ArticleImg { get; set; }
         public string ArticleContent { get; set; }
+        public string ArticleInfo { get; set; }
         public DateTime ArticleDateTime { get; set; }
 
         public bool ArticleTop { get; set; }

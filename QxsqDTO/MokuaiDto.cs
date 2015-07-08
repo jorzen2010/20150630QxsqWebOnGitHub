@@ -12,6 +12,7 @@ namespace QxsqDTO
         public string MokuaiTitle {get;set;}
         public string MokuaiImg {get;set;}
         public string MokuaiContent { get; set; }
+        public string MokuaiInfo { get; set; }
         public DateTime MokuaiDateTime {get;set;}
 
     }

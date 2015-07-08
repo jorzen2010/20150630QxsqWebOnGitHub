@@ -45,6 +45,13 @@
                               
                                
                             </div>
+                          <div class="form-group">
+
+                              @Html.LabelFor(model => model.MokuaiInfo)  @Html.ValidationMessageFor(model => model.MokuaiInfo)
+                              @Html.TextAreaFor(model => model.MokuaiInfo, new { @class = "form-control" })
+
+
+                          </div>
 
                             <div class="form-group">
                                 

@@ -25,6 +25,10 @@ namespace QxsqWebAdmin.Models
         public string ArticleImg { get; set; }
 
         [Required]
+        [Display(Name = "文章简介")]
+        public string ArticleInfo { get; set; }
+
+        [Required]
         [Display(Name = "文章内容")]
         public string ArticleContent { get; set; }
 
@@ -61,6 +65,10 @@ namespace QxsqWebAdmin.Models
         [Display(Name = "文章图片")]
         [FileUpload("Course")]
         public string ArticleImg { get; set; }
+
+        [Required]
+        [Display(Name = "文章简介")]
+        public string ArticleInfo { get; set; }
 
         [Required]
         [Display(Name = "文章内容")]

@@ -1027,10 +1027,12 @@
     <Content Include="Views\Web\Index - 复制.cshtml" />
     <Content Include="Views\Web\Index.cshtml" />
     <Content Include="Views\Web\Lianxiwomen.cshtml" />
-    <Content Include="Views\Web\Xinwengonggao.cshtml" />
+    <Content Include="Views\Web\Article.cshtml" />
     <Content Include="Views\Web\Yiliaofuwu.cshtml" />
     <Content Include="Views\Web\Zibizheng.cshtml" />
     <Content Include="Views\Web\MokuaiPartial.cshtml" />
+    <Content Include="Views\Web\Xinwengonggao.cshtml" />
+    <Content Include="Views\Web\MokuaiContent.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

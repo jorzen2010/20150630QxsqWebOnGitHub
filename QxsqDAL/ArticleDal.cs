@@ -94,7 +94,7 @@ namespace QxsqDAL
         #region 将DTO映射成数据库参数
         private static SqlParameter[] getParameters(ArticleDto articleDto)
         {
-            SqlParameter[] arParames = new SqlParameter[9];
+            SqlParameter[] arParames = new SqlParameter[10];
 
 
             arParames[0] = new SqlParameter("@ArticleId", SqlDbType.Int);
@@ -124,6 +124,9 @@ namespace QxsqDAL
             arParames[8] = new SqlParameter("@ArticleImportant", SqlDbType.Bit);
             arParames[8].Value = articleDto.ArticleImportant;
 
+            arParames[9] = new SqlParameter("@ArticleInfo", SqlDbType.Text);
+            arParames[9].Value = articleDto.ArticleInfo;
+
 
             return arParames;
         }
@@ -141,6 +144,7 @@ namespace QxsqDAL
             articleDto.ArticleImg = dr["ArticleImg"].ToString();
 
             articleDto.ArticleContent = dr["ArticleContent"].ToString();
+            articleDto.ArticleInfo = dr["ArticleInfo"].ToString();
 
             articleDto.ArticleDateTime = DateTime.Parse(dr["ArticleDateTime"].ToString());
 
@@ -160,6 +164,7 @@ namespace QxsqDAL
             articleDto.ArticleImg = dr["ArticleImg"].ToString();
 
             articleDto.ArticleContent = dr["ArticleContent"].ToString();
+            articleDto.ArticleInfo = dr["ArticleInfo"].ToString();
 
             articleDto.ArticleDateTime = DateTime.Parse(dr["ArticleDateTime"].ToString());
 

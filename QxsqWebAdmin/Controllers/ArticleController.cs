@@ -57,6 +57,7 @@ namespace QxsqWebAdmin.Controllers
             model.ArticleTitle = articleDto.ArticleTitle;
             model.ArticleImg = articleDto.ArticleImg;
             model.ArticleContent = articleDto.ArticleContent;
+            model.ArticleInfo = articleDto.ArticleInfo;
 
             model.ArticleClass = articleDto.ArticleClass;
             model.ArticleTop = articleDto.ArticleTop;
@@ -84,6 +85,7 @@ namespace QxsqWebAdmin.Controllers
             articleDto.ArticleTitle= model.ArticleTitle;
             articleDto.ArticleImg=model.ArticleImg;
             articleDto.ArticleContent=model.ArticleContent;
+            articleDto.ArticleInfo=model.ArticleInfo ;
 
             articleDto.ArticleClass=model.ArticleClass;
             articleDto.ArticleTop = model.ArticleTop;
@@ -113,6 +115,7 @@ namespace QxsqWebAdmin.Controllers
             articleDto.ArticleTitle = model.ArticleTitle;
             articleDto.ArticleImg = model.ArticleImg;
             articleDto.ArticleContent = model.ArticleContent;
+            articleDto.ArticleInfo = model.ArticleInfo;
 
             articleDto.ArticleClass = model.ArticleClass;
             articleDto.ArticleTop = model.ArticleTop;

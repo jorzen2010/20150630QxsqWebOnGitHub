@@ -57,6 +57,13 @@
 
 
                           </div>
+                          <div class="form-group">
+
+                              @Html.LabelFor(model => model.ArticleInfo)  @Html.ValidationMessageFor(model => model.ArticleInfo)
+                              @Html.TextAreaFor(model => model.ArticleInfo, new { @class = "form-control" })
+
+
+                          </div>
 
                             <div class="form-group">
                                 
