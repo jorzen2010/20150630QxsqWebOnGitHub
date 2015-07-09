@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using QxsqDTO;
 using QxsqBLL;
+using Common;
 
 namespace QxsqWebAdmin.Controllers
 {
@@ -37,6 +38,21 @@ namespace QxsqWebAdmin.Controllers
             return View();
         }
 
+        public ActionResult Mokuai(int id)
+        {
+            string table = "QxsqMokuai";
+
+            string strwhere = "MokuaiId=" + id.ToString();
+
+
+            MokuaiDto articleDto = MokuaiBll.GetOneMokuaiDto(table, strwhere);
+
+
+            ViewData.Model = articleDto;
+
+            return View();
+        }
+
         public ActionResult MokuaiContent()
         {
             return View();
@@ -58,13 +74,29 @@ namespace QxsqWebAdmin.Controllers
             return View();
         }
 
-        public ActionResult Xinwengonggao()
+        
+        #region 新闻公告页
+
+        public ActionResult Xinwengonggao(int? p)
         {
-            ViewBag.Message = "Your application description page.";
 
-            return View();
+
+            string strwhere = "ArticleId>0";
+            string table = "QxsqArticle";
+
+            Pager pager = new Pager();
+            pager.PageSize = 10;
+            pager.PageNo = p ?? 1;
+
+            pager = ArticleBll.GetArticlePager(pager, strwhere, table);
+            ViewBag.PageNo = p ?? 1;
+            ViewBag.PageCount = pager.PageCount;
+            ViewBag.RecordCount = pager.Amount;
+
+
+            return View(pager.Entity);
         }
-
+        #endregion
         public ActionResult Guanyuwomen()
         {
             ViewBag.Message = "Your application description page.";
@@ -73,8 +105,18 @@ namespace QxsqWebAdmin.Controllers
         }
 
         [ChildActionOnly]
-        public ActionResult MokuaiView()
+        public ActionResult MokuaiView(int id)
         {
+            string table = "QxsqMokuai";
+
+            string strwhere = "MokuaiId=" + id.ToString();
+
+
+            MokuaiDto mokuaiDto = MokuaiBll.GetOneMokuaiDto(table, strwhere);
+
+
+            ViewData.Model = mokuaiDto;
+
             return View("MokuaiPartial");
         }
 	}

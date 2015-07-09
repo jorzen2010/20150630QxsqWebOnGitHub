@@ -56,7 +56,7 @@ namespace QxsqWebAdmin.Controllers
             string table = "QxsqMokuai";
 
             Pager pager = new Pager();
-            pager.PageSize = 2;
+            pager.PageSize = 20;
             pager.PageNo = p ?? 1;
 
             pager = MokuaiBll.GetMokuaiPager(pager, strwhere, table);

@@ -1,0 +1,64 @@
+﻿@{
+    Layout = "~/Views/Shared/_layoutWeb.cshtml";
+    ViewBag.Title = "新闻公告";
+}
+	<!----start-content----->
+<div class="content">
+    <div class="wrap">
+        <div class="services1">
+            <div class="service-content">
+                <div style="text-align:center"><h3>@ViewData.Model.MokuaiTitle</h3></div>
+                <div style="line-height:25px;color:#808080">
+                    @Html.Raw(ViewData.Model.MokuaiContent)
+
+                        </div>
+                <div>
+                    <div style="text-align: left; margin-top: 20px; padding-bottom: 20px;">
+
+                        <!-- JiaThis Button BEGIN -->
+                        <div class="jiathis_style_24x24">
+                            <a class="jiathis_button_qzone"></a>
+                            <a class="jiathis_button_tsina"></a>
+                            <a class="jiathis_button_tqq"></a>
+                            <a class="jiathis_button_weixin"></a>
+                            <a class="jiathis_button_renren"></a>
+                            <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+                            <a class="jiathis_counter_style"></a>
+                        </div>
+                        <script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+                        <!-- JiaThis Button END -->
+                    </div>
+                    
+                        
+                    </div>
+                    <div class="clear"> </div>
+                
+               
+            </div>
+            <div class="services-sidebar">
+                <h3>公共卫生服务</h3>
+                <ul>
+                    <li><a href="/Web/Mokuai?id=7">居民健康档案管理</a></li>
+                    <li><a href="/Web/Mokuai?id=9">居民健康教育</a></li>
+                    <li><a href="/Web/Mokuai?id=10">0~6岁儿童健康管理</a></li>
+                    <li><a href="/Web/Mokuai?id=11">孕产妇健康管理</a></li>
+                    <li><a href="/Web/Mokuai?id=12">老年人健康管理</a></li>
+                    <li><a href="/Web/Mokuai?id=13">高血压患者健康管理</a></li>
+                    <li><a href="/Web/Mokuai?id=14">2型糖尿病健康管理</a></li>
+
+                </ul>
+                <h3>医疗服务</h3>
+                <ul>
+                    <li><a href="#">口腔科</a></li>
+                    <li><a href="#">中医针灸科</a></li>
+                    <li><a href="#">推拿科</a></li>
+                    <li><a href="#">小儿按摩科</a></li>
+                </ul>
+            </div>
+            <div class="clear"> </div>
+        </div>
+        <div class="clear"> </div>
+    </div>
+    <!----End-content----->
+</div>
+<!---End-wrap---->

@@ -8,51 +8,20 @@
         <div class="services1">
             <div class="service-content">
                 <h3>最新新闻</h3>
+
+@foreach (var item in Model)
+            {
                 <ul>
-                    <li><span>1.</span></li>
-                    <li><p><a href="#">MANUFACTURING &amp; INDUSTRIAL</a>Praesent vestibulum molestie lacus. Aenean nonummy hendrerit mauris. Phasellus porta. Fusce suscipit varius mi. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nulla dui.</p></li>
+                    <li><span> 1.</span></li>
+                    <li><p>
+                            <a href="/Web/Article/@item.ArticleId">@item.ArticleTitle</a>
+                        @item.ArticleInfo
+                        </p></li>
                     <div class="clear"> </div>
                 </ul>
-                <ul>
-                    <li><span>2.</span></li>
-                    <li><p><a href="#">FINANCIAL INSTITUTION</a>Praesent vestibulum molestie lacus. Aenean nonummy hendrerit mauris. Phasellus porta. Fusce suscipit varius mi. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nulla dui.</p></li>
-                    <div class="clear"> </div>
-                </ul>
-                <ul>
-                    <li><span>3.</span></li>
-                    <li><p><a href="#">OFFICE BUILDING</a>Praesent vestibulum molestie lacus. Aenean nonummy hendrerit mauris. Phasellus porta. Fusce suscipit varius mi. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nulla dui.</p></li>
-                    <div class="clear"> </div>
-                </ul>
-                <ul>
-                    <li><span>4.</span></li>
-                    <li><p><a href="#">RESIDENTIAL COMMUNITIES</a>Praesent vestibulum molestie lacus. Aenean nonummy hendrerit mauris. Phasellus porta. Fusce suscipit varius mi. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nulla dui.</p></li>
-                    <div class="clear"> </div>
-                </ul>
-                <ul>
-                    <li><span>5.</span></li>
-                    <li><p><a href="#">RETAIL INDUSTRY</a>Praesent vestibulum molestie lacus. Aenean nonummy hendrerit mauris. Phasellus porta. Fusce suscipit varius mi. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nulla dui.</p></li>
-                    <div class="clear"> </div>
-                </ul>
-                <ul>
-                    <li><span>6.</span></li>
-                    <li><p><a href="#">GOVERNMENT FACILITIES</a>Praesent vestibulum molestie lacus. Aenean nonummy hendrerit mauris. Phasellus porta. Fusce suscipit varius mi. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nulla dui.</p></li>
-                    <div class="clear"> </div>
-                </ul>
-                <ul>
-                    <li><span>7.</span></li>
-                    <li><p><a href="#">COLLEGES &amp; UNIVERSITIES</a>Praesent vestibulum molestie lacus. Aenean nonummy hendrerit mauris. Phasellus porta. Fusce suscipit varius mi. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nulla dui.</p></li>
-                    <div class="clear"> </div>
-                </ul>
-                <ul>
-                    <li><span>8.</span></li>
-                    <li><p><a href="#">DISTRIBUTION FACILITIES</a>Praesent vestibulum molestie lacus. Aenean nonummy hendrerit mauris. Phasellus porta. Fusce suscipit varius mi. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nulla dui.</p></li>
-                    <div class="clear"> </div>
-                </ul>
-                <ul>
-                    <li><span>9.</span></li>
-                    <li><p><a href="#">HEALTHCARE FACILITIES</a>Praesent vestibulum molestie lacus. Aenean nonummy hendrerit mauris. Phasellus porta. Fusce suscipit varius mi. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nulla dui.</p></li>
-                    <div class="clear"> </div>
-                </ul>
+    
+            }
+                
             </div>
             <div class="services-sidebar">
                 <h3>健康教育</h3>
