@@ -842,6 +842,7 @@
     <Content Include="less\small-box.less" />
     <Content Include="less\timeline.less" />
     <Content Include="less\vars.less" />
+    <None Include="Properties\PublishProfiles\zuyanquxian.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
