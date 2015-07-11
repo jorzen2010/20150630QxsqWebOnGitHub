@@ -190,6 +190,7 @@
     <Content Include="images\d2.jpg" />
     <Content Include="images\d3.jpg" />
     <Content Include="images\d4.jpg" />
+    <Content Include="images\erweima.jpg" />
     <Content Include="images\facebook.png" />
     <Content Include="images\feed.png" />
     <Content Include="images\inject.png" />
@@ -1021,6 +1022,9 @@
     <Content Include="Views\Web\Xinwengonggao.cshtml" />
     <Content Include="Views\Web\MokuaiContent.cshtml" />
     <Content Include="Views\Web\Mokuai.cshtml" />
+    <Content Include="Views\Web\LeftMenuPartial.cshtml" />
+    <Content Include="Views\Web\Index - 复制%282%29.cshtml" />
+    <Content Include="Views\Web\Zibizheng - 复制.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

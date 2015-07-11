@@ -9,8 +9,9 @@
             <div class="service-content">
                 <div style="text-align:center"><h3>@ViewData.Model.MokuaiTitle</h3></div>
                 <div style="line-height:25px;color:#808080">
-                    @Html.Raw(ViewData.Model.MokuaiContent)
-
+               
+                        @Html.Raw(ViewData.Model.MokuaiContent)
+                     
                         </div>
                 <div>
                     <div style="text-align: left; margin-top: 20px; padding-bottom: 20px;">
@@ -35,26 +36,8 @@
                 
                
             </div>
-            <div class="services-sidebar">
-                <h3>公共卫生服务</h3>
-                <ul>
-                    <li><a href="/Web/Mokuai?id=7">居民健康档案管理</a></li>
-                    <li><a href="/Web/Mokuai?id=9">居民健康教育</a></li>
-                    <li><a href="/Web/Mokuai?id=10">0~6岁儿童健康管理</a></li>
-                    <li><a href="/Web/Mokuai?id=11">孕产妇健康管理</a></li>
-                    <li><a href="/Web/Mokuai?id=12">老年人健康管理</a></li>
-                    <li><a href="/Web/Mokuai?id=13">高血压患者健康管理</a></li>
-                    <li><a href="/Web/Mokuai?id=14">2型糖尿病健康管理</a></li>
-
-                </ul>
-                <h3>医疗服务</h3>
-                <ul>
-                    <li><a href="#">口腔科</a></li>
-                    <li><a href="#">中医针灸科</a></li>
-                    <li><a href="#">推拿科</a></li>
-                    <li><a href="#">小儿按摩科</a></li>
-                </ul>
-            </div>
+            
+            @{Html.RenderAction("LeftMenuView", "Web");}
             <div class="clear"> </div>
         </div>
         <div class="clear"> </div>

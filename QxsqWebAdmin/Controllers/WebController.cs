@@ -85,7 +85,7 @@ namespace QxsqWebAdmin.Controllers
             string table = "QxsqArticle";
 
             Pager pager = new Pager();
-            pager.PageSize = 10;
+            pager.PageSize = 9;
             pager.PageNo = p ?? 1;
 
             pager = ArticleBll.GetArticlePager(pager, strwhere, table);
@@ -118,6 +118,13 @@ namespace QxsqWebAdmin.Controllers
             ViewData.Model = mokuaiDto;
 
             return View("MokuaiPartial");
+        }
+        [ChildActionOnly]
+        public ActionResult LeftMenuView(string urlTitle)
+        {
+
+
+            return View("LeftMenuPartial");
         }
 	}
 }
