@@ -9,6 +9,8 @@ namespace QxsqDTO
     public class SickDto
     {
         public int SickId { get; set; }
+        public string SickUserName { get; set; }
+        public string SickPassword { get; set; }
         public string SickName {get; set; }
         public string SickNumber { get; set; }
         public string SickTel { get; set; }
