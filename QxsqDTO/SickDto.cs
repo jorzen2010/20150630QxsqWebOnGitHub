@@ -17,6 +17,7 @@ namespace QxsqDTO
         public string SickGroup { get; set; }
         public string SickPerson { get; set; }
         public string SickPersonTel { get; set; }
+        public string SickTag { get; set; }
 
     }
 }
