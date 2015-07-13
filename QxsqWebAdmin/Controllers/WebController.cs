@@ -74,6 +74,11 @@ namespace QxsqWebAdmin.Controllers
             return View();
         }
 
+        public ActionResult Yuyueguahao()
+        {
+            return View();
+        }
+
         
         #region 新闻公告页
 

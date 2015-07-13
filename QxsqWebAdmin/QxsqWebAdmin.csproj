@@ -1025,6 +1025,7 @@
     <Content Include="Views\Web\LeftMenuPartial.cshtml" />
     <Content Include="Views\Web\Index - 复制%282%29.cshtml" />
     <Content Include="Views\Web\Zibizheng - 复制.cshtml" />
+    <Content Include="Views\Web\Yuyueguahao.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
