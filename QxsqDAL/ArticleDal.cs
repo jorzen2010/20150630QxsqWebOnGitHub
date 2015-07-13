@@ -16,10 +16,10 @@ namespace QxsqDAL
 
         #region 模块添加
 
-        public static void AddArticle(ArticleDto ArticleDto)
+        public static void AddArticle(ArticleDto articleDto)
         {
 
-            SqlParameter[] arParames = ArticleDal.getParameters(ArticleDto);
+            SqlParameter[] arParames = ArticleDal.getParameters(articleDto);
 
             SqlHelper.ExecuteNonQuery(CommonDal.ConnectionString, CommandType.StoredProcedure, "CreateArticle", arParames);
 
@@ -30,7 +30,7 @@ namespace QxsqDAL
 
         public static ArticleDto GetOneArticle(string table,string strwhere)
         {
-            ArticleDto ArticleDto = new ArticleDto();
+            ArticleDto articleDto = new ArticleDto();
 
             SqlParameter[] arParames = new SqlParameter[2];
             arParames[0] = new SqlParameter("@table ", SqlDbType.VarChar, 200);
@@ -46,12 +46,12 @@ namespace QxsqDAL
             foreach (DataRow dr in dt.Rows)
             {
 
-                ArticleDto = ArticleDal.getDataRowToArticleDto(dr);
+                articleDto = ArticleDal.getDataRowToArticleDto(dr);
 
             }
 
 
-            return ArticleDto;
+            return articleDto;
 
 
 

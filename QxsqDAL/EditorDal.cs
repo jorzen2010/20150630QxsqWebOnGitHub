@@ -60,7 +60,7 @@ namespace QxsqDAL
         #region 获取网站管理员List数据
         public static List<EditorDto> GetEditorList(string strwhere)
         {
-            List<EditorDto> gamelist = new List<EditorDto>();
+            List<EditorDto> editorlist = new List<EditorDto>();
 
 
 
@@ -81,11 +81,11 @@ namespace QxsqDAL
                 editorDto = EditorDal.getDataRowToEditorDto(dr);
 
 
-                gamelist.Add(editorDto);
+                editorlist.Add(editorDto);
 
             }
 
-            return gamelist;
+            return editorlist;
 
         }
         #endregion

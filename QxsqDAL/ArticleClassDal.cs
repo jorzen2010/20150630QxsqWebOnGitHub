@@ -61,7 +61,7 @@ namespace QxsqDAL
         #region 获取文章类别List数据
         public static List<ArticleClassDto> GetArticleClassList(string strwhere)
         {
-            List<ArticleClassDto> articlelist = new List<ArticleClassDto>();
+            List<ArticleClassDto> articleClasslist = new List<ArticleClassDto>();
 
 
 
@@ -82,11 +82,11 @@ namespace QxsqDAL
                 articleClassDto = ArticleClassDal.getDataRowToArticleClassDto(dr);
 
 
-                articlelist.Add(articleClassDto);
+                articleClasslist.Add(articleClassDto);
 
             }
 
-            return articlelist;
+            return articleClasslist;
 
         }
         #endregion

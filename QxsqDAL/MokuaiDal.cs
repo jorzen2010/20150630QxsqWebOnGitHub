@@ -16,10 +16,10 @@ namespace QxsqDAL
 
         #region 模块添加
 
-        public static void AddMokuai(MokuaiDto MokuaiDto)
+        public static void AddMokuai(MokuaiDto mokuaiDto)
         {
 
-            SqlParameter[] arParames = MokuaiDal.getParameters(MokuaiDto);
+            SqlParameter[] arParames = MokuaiDal.getParameters(mokuaiDto);
 
             SqlHelper.ExecuteNonQuery(CommonDal.ConnectionString, CommandType.StoredProcedure, "CreateMokuai", arParames);
 
@@ -61,7 +61,7 @@ namespace QxsqDAL
         #region 获取模块List数据
         public static List<MokuaiDto> GetMokuaiList(string strwhere)
         {
-            List<MokuaiDto> gamelist = new List<MokuaiDto>();
+            List<MokuaiDto> mokuailist = new List<MokuaiDto>();
 
 
 
@@ -82,38 +82,38 @@ namespace QxsqDAL
                 MokuaiDto = MokuaiDal.getDataRowToMokuaiDto(dr);
 
 
-                gamelist.Add(MokuaiDto);
+                mokuailist.Add(MokuaiDto);
 
             }
 
-            return gamelist;
+            return mokuailist;
 
         }
         #endregion
 
         #region 将DTO映射成数据库参数
-        private static SqlParameter[] getParameters(MokuaiDto MokuaiDto)
+        private static SqlParameter[] getParameters(MokuaiDto mokuaiDto)
         {
             SqlParameter[] arParames = new SqlParameter[6];
 
 
             arParames[0] = new SqlParameter("@MokuaiId", SqlDbType.Int);
-            arParames[0].Value = MokuaiDto.MokuaiId;
+            arParames[0].Value = mokuaiDto.MokuaiId;
 
             arParames[1] = new SqlParameter("@MokuaiTitle", SqlDbType.VarChar, 500);
-            arParames[1].Value = MokuaiDto.MokuaiTitle;
+            arParames[1].Value = mokuaiDto.MokuaiTitle;
 
             arParames[2] = new SqlParameter("@MokuaiImg", SqlDbType.VarChar, 500);
-            arParames[2].Value = MokuaiDto.MokuaiImg;
+            arParames[2].Value = mokuaiDto.MokuaiImg;
 
             arParames[3] = new SqlParameter("@MokuaiContent", SqlDbType.Text);
-            arParames[3].Value = MokuaiDto.MokuaiContent;
+            arParames[3].Value = mokuaiDto.MokuaiContent;
 
             arParames[4] = new SqlParameter("@MokuaiInfo", SqlDbType.Text);
-            arParames[4].Value = MokuaiDto.MokuaiInfo;
+            arParames[4].Value = mokuaiDto.MokuaiInfo;
 
             arParames[5] = new SqlParameter("@MokuaiDateTime", SqlDbType.DateTime);
-            arParames[5].Value = MokuaiDto.MokuaiDateTime;
+            arParames[5].Value = mokuaiDto.MokuaiDateTime;
 
 
             return arParames;
@@ -180,10 +180,10 @@ namespace QxsqDAL
         #endregion
         
         #region 更新一个Mokuai
-        public static void UpdateMokuai(MokuaiDto MokuaiDto)
+        public static void UpdateMokuai(MokuaiDto mokuaiDto)
         {
 
-            SqlParameter[] arParames = MokuaiDal.getParameters(MokuaiDto);
+            SqlParameter[] arParames = MokuaiDal.getParameters(mokuaiDto);
 
             SqlHelper.ExecuteNonQuery(CommonDal.ConnectionString, CommandType.StoredProcedure, "UpdateMokuai", arParames);
 
