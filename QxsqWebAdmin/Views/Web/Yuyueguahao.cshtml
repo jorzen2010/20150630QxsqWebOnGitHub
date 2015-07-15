@@ -1,7 +1,9 @@
-﻿@{
+﻿@model QxsqWebAdmin.Models.GuahaoAddViewModel
+@{
     Layout = "~/Views/Shared/_layoutWeb.cshtml";
     ViewBag.Title = "联系我们";
 }
+<link rel="stylesheet" type="text/css" href="/css/jquery.datetimepicker.css" />
 
 	<!----start-content----->
 <div class="content">
@@ -17,13 +19,45 @@
                         <p>电话挂号：0451-8758 8596</p>
                         <h4>微信预约</h4>
                         <p>微信挂号：曲线社区卫生服务中心</p>
+                        <h4>微信预约</h4>
+                        <p>预约挂号后，可以在窗口直接根据时间挂号即可。不用排队。省去等待时间。</p>
 
                     </div>
                 </div>
                 <div class="col span_2_of_3">
                     <div class="contact-form">
-                        <h3>在线预约</h3>
-                        <img src="/images/erweima.jpg" />
+                        <h3>在线挂号</h3>
+                       @using (Html.BeginForm("GuahaoInsert", "Web", FormMethod.Post))
+    {
+
+    @Html.ValidationSummary(true)  
+                           @Html.HiddenFor(model => model.GuahaoDoctor)
+                           @Html.HiddenFor(model => model.GuahaoGroup)
+                           @Html.HiddenFor(model => model.GuahaoStatus)
+                             <div>
+                                <span>@Html.LabelFor(model => model.GuahaoName) </span>
+                                 <span>@Html.ValidationMessageFor(model => model.GuahaoName)</span>
+                                <span>@Html.TextBoxFor(model => model.GuahaoName)</span>
+
+                                 
+                               
+                            </div>
+                            <div>
+                                <span>@Html.LabelFor(model => model.GuahaoTel)</span>@Html.ValidationMessageFor(model => model.GuahaoTel)
+                                <span>@Html.TextBoxFor(model => model.GuahaoTel)</span>
+                            </div>
+                            <div>
+                                <span>@Html.LabelFor(model => model.GuahaoTime)</span>@Html.ValidationMessageFor(model => model.GuahaoTime)
+                                <span>@Html.TextBoxFor(model => model.GuahaoTime)</span>
+                            </div>
+                            <div>
+                                <span>@Html.LabelFor(model => model.GuahaoInfo)</span>@Html.ValidationMessageFor(model => model.GuahaoInfo)
+                                <span>@Html.TextAreaFor(model => model.GuahaoInfo)</span>
+                            </div>
+                            <div>
+                                <span><input type="submit" value="立刻预约"></span>
+                            </div>
+                       }
                     </div>
                 </div>
             </div>
@@ -34,3 +68,14 @@
     <!----End-content----->
 </div>
 <!---End-wrap---->
+@section scripts{
+<script src="/js/jquery.datetimepicker.js"></script>
+<script src="/js/jquery.validate.min.js"></script>
+    <script src="/js/jquery.validate.unobtrusive.js"></script>
+
+<script>
+
+    $('#GuahaoTime').datetimepicker();
+</script>
+
+}

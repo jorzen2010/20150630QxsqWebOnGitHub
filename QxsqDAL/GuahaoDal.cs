@@ -97,7 +97,7 @@ namespace QxsqDAL
         #region 将DTO映射成数据库参数
         private static SqlParameter[] getParameters(GuahaoDto guahaoDto)
         {
-            SqlParameter[] arParames = new SqlParameter[6];
+            SqlParameter[] arParames = new SqlParameter[9];
 
 
             arParames[0] = new SqlParameter("@GuahaoId", SqlDbType.Int);
@@ -154,6 +154,8 @@ namespace QxsqDAL
 
             guahaoDto.GuahaoGroup = dr["GuahaoGroup"].ToString();
 
+            guahaoDto.GuahaoStatus = dr["GuahaoStatus"].ToString();
+
             
 
             return guahaoDto;
@@ -181,6 +183,8 @@ namespace QxsqDAL
             guahaoDto.GuahaoDoctor = dr["GuahaoDoctor"].ToString();
 
             guahaoDto.GuahaoGroup = dr["GuahaoGroup"].ToString();
+
+            guahaoDto.GuahaoStatus = dr["GuahaoStatus"].ToString();
 
             return guahaoDto;
         }

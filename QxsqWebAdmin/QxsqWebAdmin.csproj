@@ -187,6 +187,7 @@
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
+    <Content Include="css\jquery.datetimepicker.css" />
     <Content Include="images\best.png" />
     <Content Include="images\d1.jpg" />
     <Content Include="images\d2.jpg" />
@@ -215,6 +216,7 @@
     <Content Include="images\timer.png" />
     <Content Include="images\tool.png" />
     <Content Include="images\twitter.png" />
+    <Content Include="js\jquery.datetimepicker.js" />
     <Content Include="js\responsiveslides.min.js" />
     <Content Include="umeditor\net\Uploader.cs" />
     <Content Include="WebCss\responsiveslides.css" />
@@ -1031,6 +1033,7 @@
     <Content Include="Views\Web\Index - 复制%282%29.cshtml" />
     <Content Include="Views\Web\Zibizheng - 复制.cshtml" />
     <Content Include="Views\Web\Yuyueguahao.cshtml" />
+    <Content Include="Views\Shared\WebRedirect.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

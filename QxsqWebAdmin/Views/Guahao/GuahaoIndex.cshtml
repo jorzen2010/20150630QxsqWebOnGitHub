@@ -43,6 +43,7 @@
                                 <th>患者姓名</th>   
                                 <th>患者手机</th>                             
                                 <th>预约日期</th>
+                               
                                 <th>挂号状态</th>
                             </tr>
 
@@ -51,13 +52,15 @@
                             <tr>
                                 <td>@item.GuahaoId</td>
                                 <td>@item.GuahaoName</td>
+                                <td>@item.GuahaoTel</td>
                            
-                                <td>@item.GuahaoTime</td>
+                                <td>@item.GuahaoTime </td>
+                                
                                 <td>
                                     <a href="@Url.Action("GuahaoEdit", "Guahao", new { GuahaoId = @item.GuahaoId })">
-                                        <button class="btn btn-sm btn-success"><i class="fa fa fa-edit"></i>  编辑</button>
+                                        <button class="btn btn-sm btn-success">  @item.GuahaoStatus </button>
                                     </a>  
-                                    <button class="btn btn-sm btn-danger" onclick="DeleteGuahao(@item.GuahaoId)"><i class="fa fa-trash-o"></i>  删除</button>
+                                  
                                 </td>
                             </tr>
 }

@@ -6,6 +6,7 @@ using System.Web.Mvc;
 using QxsqDTO;
 using QxsqBLL;
 using Common;
+using QxsqWebAdmin.Models;
 
 namespace QxsqWebAdmin.Controllers
 {
@@ -76,9 +77,39 @@ namespace QxsqWebAdmin.Controllers
 
         public ActionResult Yuyueguahao()
         {
-            return View();
+            GuahaoAddViewModel model = new GuahaoAddViewModel();
+            model.GuahaoDoctor = "全科医生";
+            model.GuahaoGroup = "曲线社区医院";
+            model.GuahaoStatus = "等待付款";
+
+            return View(model);
         }
 
+        #region 模块新增动作
+        [HttpPost]
+
+        public ActionResult GuahaoInsert(GuahaoAddViewModel model)
+        {
+            GuahaoDto guahaoDto = new GuahaoDto();
+
+            guahaoDto.GuahaoName = model.GuahaoName;
+            guahaoDto.GuahaoTel = model.GuahaoTel;
+            guahaoDto.GuahaoInfo = model.GuahaoInfo;
+            guahaoDto.GuahaoDateTime = System.DateTime.Now;
+            guahaoDto.GuahaoTime = System.DateTime.Now;
+            guahaoDto.GuahaoStatus = model.GuahaoStatus;
+            guahaoDto.GuahaoDoctor = model.GuahaoDoctor;
+            guahaoDto.GuahaoGroup = model.GuahaoGroup;
+
+
+            GuahaoBll.AddGuahao(guahaoDto);
+
+
+            return  RedirectToAction("Index");
+
+
+        }
+        #endregion
         
         #region 新闻公告页
 
@@ -131,5 +162,8 @@ namespace QxsqWebAdmin.Controllers
 
             return View("LeftMenuPartial");
         }
+
+
+        
 	}
 }

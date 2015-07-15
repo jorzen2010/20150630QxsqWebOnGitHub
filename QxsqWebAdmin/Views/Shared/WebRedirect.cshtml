@@ -1,0 +1,40 @@
+﻿@{
+    ViewBag.Title = "跳转页面";
+}
+
+
+
+
+<div class="content">
+    <div class="wrap">
+        <!---start-contact---->
+        <div class="contact">
+            <div class="section group">
+                
+                <div class="col span_3_of_3">
+                    <div class="contact-form">
+                        <h3><span style="color:red; font-weight:bold;"> @ViewBag.Message </span></h3>
+                        程序将会在<span id="tid" style="color:red;padding:0 10px; font-weight:bold;">5</span>秒后自动跳转。
+                        如果您的浏览器没有为您跳转，<a title="点击直接跳转！" href="@ViewBag.Url" class="btn btn-primary">请点击这里</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!---End-contact---->
+        <div class="clear"> </div>
+    </div>
+    <!----End-content----->
+</div>
+
+<script type="text/javascript">
+    var interval = setInterval(function () {
+        var sec = $('#tid').text() - 1;
+        if (sec <= 0) {
+            clearInterval(interval);
+            window.location = "@ViewBag.Url";
+        }
+        else {
+            $('#tid').text(sec);
+        }
+    }, 1000);
+</script>
