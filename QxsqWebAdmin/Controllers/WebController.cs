@@ -81,6 +81,7 @@ namespace QxsqWebAdmin.Controllers
             model.GuahaoDoctor = "全科医生";
             model.GuahaoGroup = "曲线社区医院";
             model.GuahaoStatus = "等待付款";
+            model.GuahaoTime = System.DateTime.Now;
 
             return View(model);
         }
@@ -105,7 +106,7 @@ namespace QxsqWebAdmin.Controllers
             GuahaoBll.AddGuahao(guahaoDto);
 
 
-            return  RedirectToAction("Index");
+            return RedirectToAction("WebRedirect", new { title = "您已经成功预约了挂号，请您按时就医。" });
 
 
         }
@@ -163,7 +164,12 @@ namespace QxsqWebAdmin.Controllers
             return View("LeftMenuPartial");
         }
 
-
+        public ActionResult WebRedirect(string title)
+        {
+            ViewBag.title = title;
+            return View();
+        
+        }
         
 	}
 }

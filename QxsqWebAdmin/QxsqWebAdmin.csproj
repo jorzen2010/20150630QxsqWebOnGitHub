@@ -1034,6 +1034,7 @@
     <Content Include="Views\Web\Zibizheng - 复制.cshtml" />
     <Content Include="Views\Web\Yuyueguahao.cshtml" />
     <Content Include="Views\Shared\WebRedirect.cshtml" />
+    <Content Include="Views\Web\WebRedirect.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

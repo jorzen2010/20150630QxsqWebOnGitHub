@@ -11,6 +11,8 @@ namespace QxsqWebAdmin.Models
     #region 模块添加模型
     public class GuahaoAddViewModel
     {
+        [RegularExpression("^[\u4E00-\u9FA5]{2,4}$", ErrorMessage = "姓名格式错误。")]
+        [StringLength(4, MinimumLength = 2, ErrorMessage = "姓名必须是2-4个汉字")]
         [Required]
         [Display(Name = "姓名")]
         public string GuahaoName { get; set; }
