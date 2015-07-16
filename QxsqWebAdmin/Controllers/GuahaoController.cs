@@ -50,11 +50,20 @@ namespace QxsqWebAdmin.Controllers
 
         #region 模块列表页
 
-        public ActionResult GuahaoIndex(int? p)
+        public ActionResult GuahaoIndex(int? p,int? status)
         {
+            int GuahaoStatus = status ?? 0;
+            string strwhere = "";
 
-
-            string strwhere = "GuahaoId>0";
+            if (GuahaoStatus == 0)
+            {
+                strwhere = "GuahaoId>0";
+            }
+            if (GuahaoStatus == 1)
+            {
+                strwhere = "GuahaoId>0 and GuahaoStatus=" + GuahaoStatus;
+            }
+            
             string table = "QxsqGuahao";
 
             Pager pager = new Pager();

@@ -115,7 +115,7 @@ namespace QxsqDAL
             arParames[4] = new SqlParameter("@GuahaoInfo", SqlDbType.Text);
             arParames[4].Value = guahaoDto.GuahaoInfo;
 
-            arParames[5] = new SqlParameter("@GuahaoStatus", SqlDbType.VarChar,50);
+            arParames[5] = new SqlParameter("@GuahaoStatus", SqlDbType.Int);
             arParames[5].Value = guahaoDto.GuahaoStatus;
 
             arParames[6] = new SqlParameter("@GuahaoDateTime", SqlDbType.DateTime);
@@ -154,7 +154,7 @@ namespace QxsqDAL
 
             guahaoDto.GuahaoGroup = dr["GuahaoGroup"].ToString();
 
-            guahaoDto.GuahaoStatus = dr["GuahaoStatus"].ToString();
+            guahaoDto.GuahaoStatus =int.Parse(dr["GuahaoStatus"].ToString());
 
             
 
@@ -184,7 +184,7 @@ namespace QxsqDAL
 
             guahaoDto.GuahaoGroup = dr["GuahaoGroup"].ToString();
 
-            guahaoDto.GuahaoStatus = dr["GuahaoStatus"].ToString();
+            guahaoDto.GuahaoStatus = int.Parse(dr["GuahaoStatus"].ToString());
 
             return guahaoDto;
         }

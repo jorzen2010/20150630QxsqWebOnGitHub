@@ -11,7 +11,7 @@ namespace QxsqWebAdmin.Models
     #region 模块添加模型
     public class GuahaoAddViewModel
     {
-        [RegularExpression("^[\u4E00-\u9FA5]{2,4}$", ErrorMessage = "姓名格式错误。")]
+        [RegularExpression("^[\u4E00-\u9FA5]{2,4}$", ErrorMessage = "姓名必须是2-4个汉字")]
         [StringLength(4, MinimumLength = 2, ErrorMessage = "姓名必须是2-4个汉字")]
         [Required]
         [Display(Name = "姓名")]
@@ -34,7 +34,7 @@ namespace QxsqWebAdmin.Models
 
         [Required]
         [Display(Name = "预约状态")]
-        public string GuahaoStatus { get; set; }
+        public int GuahaoStatus { get; set; }
 
         [Required]
         [Display(Name = "预约医生")]
@@ -75,7 +75,7 @@ namespace QxsqWebAdmin.Models
 
         [Required]
         [Display(Name = "预约状态")]
-        public string GuahaoStatus { get; set; }
+        public int GuahaoStatus { get; set; }
 
         [Required]
         [Display(Name = "预约医生")]

@@ -23,7 +23,7 @@ namespace QxsqWebAdmin.Controllers
             string table = "QxsqArticle";
 
             Pager pager = new Pager();
-            pager.PageSize = 2;
+            pager.PageSize = 20;
             pager.PageNo = p ?? 1;
 
             pager = ArticleBll.GetArticlePager(pager, strwhere, table);

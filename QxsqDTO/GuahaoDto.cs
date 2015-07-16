@@ -15,7 +15,7 @@ namespace QxsqDTO
        public string GuahaoInfo { get; set; }
 
 
-       public string GuahaoStatus { get; set; }
+       public int GuahaoStatus { get; set; }
        public DateTime GuahaoDateTime { get; set; }
 
 

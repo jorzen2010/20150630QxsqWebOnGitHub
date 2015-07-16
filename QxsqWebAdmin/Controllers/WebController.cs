@@ -80,7 +80,7 @@ namespace QxsqWebAdmin.Controllers
             GuahaoAddViewModel model = new GuahaoAddViewModel();
             model.GuahaoDoctor = "全科医生";
             model.GuahaoGroup = "曲线社区医院";
-            model.GuahaoStatus = "等待付款";
+            model.GuahaoStatus = 1;
             model.GuahaoTime = System.DateTime.Now;
 
             return View(model);
