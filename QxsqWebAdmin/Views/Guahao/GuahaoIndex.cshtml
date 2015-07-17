@@ -53,6 +53,7 @@
                                 <th>预约日期</th>
                                
                                 <th>挂号状态</th>
+                                <th>操作</th>
                             </tr>
 
 @foreach (var item in Model)
@@ -68,13 +69,13 @@
                                 { <td>
                                     @if (item.GuahaoStatus == 1)
                                     { 
-                                        <button class="btn btn-sm btn-warning" onclick="GuahaoPay(@item.GuahaoId,2)"> 
+                                        <button class="btn btn-sm btn-warning"> 
                                             成功预约，等待付款</button>
                                     }
-                                    else
-                                    {  <button class="btn btn-sm btn-success disabled">
+                                 @if (item.GuahaoStatus == 2)
+                                  {  <button class="btn btn-sm btn-success disabled">
                                         成功付款，挂号完成
-                                    </button>
+                                     </button>
                                     }
                                   
                                 </td>}
@@ -82,11 +83,21 @@
                             {   
                                 <td>
                                    
-                                        <button class="btn btn-sm btn-primary disabled"> 此挂号已经过期，不予办理</button>
+                                        <button class="btn btn-sm btn-danger disabled"> 此挂号已经过期</button>
                                   
 
                                 </td>
                                 }
+
+                                <td>
+                                   @if (item.GuahaoStatus == 1)
+                                       { <button class="btn btn-sm btn-warning" onclick="GuahaoPay(@item.GuahaoId,@item.GuahaoStatus+1)">
+                                       
+                                           成功预约，等待付款
+                                      
+                                    </button>
+                                   }
+                                </td>
                             </tr>
 }
 
