@@ -34,9 +34,9 @@ namespace QxsqBLL
         #endregion
 
         #region 新增一个
-        public static void AddGuahao(GuahaoDto mguahaoDto)
+        public static void AddGuahao(GuahaoDto guahaoDto)
         {
-            GuahaoDal.AddGuahao(mguahaoDto);
+            GuahaoDal.AddGuahao(guahaoDto);
      
         }
 
@@ -46,11 +46,11 @@ namespace QxsqBLL
         #region 获取一个Guahao
         public static GuahaoDto GetOneGuahaoDto(string table,string strwhere)
         {
-            GuahaoDto mguahaoDto=new GuahaoDto();
+            GuahaoDto guahaoDto=new GuahaoDto();
 
-            mguahaoDto = GuahaoDal.GetOneGuahao(table, strwhere);
+            guahaoDto = GuahaoDal.GetOneGuahao(table, strwhere);
 
-            return mguahaoDto;
+            return guahaoDto;
         }
 
 
@@ -58,9 +58,9 @@ namespace QxsqBLL
 
         #region 更新Guahao
 
-        public static void UpdateGuahaoDto(GuahaoDto mguahaoDto)
+        public static void UpdateGuahaoDto(GuahaoDto guahaoDto)
         {
-            GuahaoDal.UpdateGuahao(mguahaoDto);
+            GuahaoDal.UpdateGuahao(guahaoDto);
         }
 
         #endregion

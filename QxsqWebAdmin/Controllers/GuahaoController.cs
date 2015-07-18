@@ -59,15 +59,12 @@ namespace QxsqWebAdmin.Controllers
             {
                 strwhere = "GuahaoId>0";
             }
-            if (GuahaoStatus == 1 || GuahaoStatus == 2)
+            else
             {
                 strwhere = "GuahaoId>0 and GuahaoStatus=" + GuahaoStatus;
             }
 
-            if (GuahaoStatus == 3)
-            {
-                strwhere = "GuahaoId>0 and datediff(second,GuahaoTime,'2015-07-16 00;00:00')>0";
-            }
+           
 
             string table = "QxsqGuahao";
 

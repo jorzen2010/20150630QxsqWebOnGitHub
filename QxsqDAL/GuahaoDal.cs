@@ -14,7 +14,7 @@ namespace QxsqDAL
     public class GuahaoDal
     {
 
-        #region 模块添加
+        #region 挂号添加
 
 
 
@@ -28,7 +28,7 @@ namespace QxsqDAL
         }
         #endregion
 
-        #region 获取一个模块DTO
+        #region 获取一个挂号DTO
 
         public static GuahaoDto GetOneGuahao(string table,string strwhere)
         {
@@ -60,7 +60,7 @@ namespace QxsqDAL
         }
         #endregion
 
-        #region 获取模块List数据
+        #region 获取挂号List数据
         public static List<GuahaoDto> GetGuahaoList(string strwhere)
         {
             List<GuahaoDto> guahaolist = new List<GuahaoDto>();
