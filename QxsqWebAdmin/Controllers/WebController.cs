@@ -86,7 +86,7 @@ namespace QxsqWebAdmin.Controllers
             return View(model);
         }
 
-        #region 模块新增动作
+        #region 挂号动作
         [HttpPost]
 
         public ActionResult GuahaoInsert(GuahaoAddViewModel model)
@@ -97,7 +97,7 @@ namespace QxsqWebAdmin.Controllers
             guahaoDto.GuahaoTel = model.GuahaoTel;
             guahaoDto.GuahaoInfo = model.GuahaoInfo;
             guahaoDto.GuahaoDateTime = System.DateTime.Now;
-            guahaoDto.GuahaoTime = System.DateTime.Now;
+            guahaoDto.GuahaoTime = model.GuahaoTime;
             guahaoDto.GuahaoStatus = model.GuahaoStatus;
             guahaoDto.GuahaoDoctor = model.GuahaoDoctor;
             guahaoDto.GuahaoGroup = model.GuahaoGroup;

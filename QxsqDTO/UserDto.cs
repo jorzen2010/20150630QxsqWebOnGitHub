@@ -27,13 +27,17 @@ namespace QxsqDTO
      public string UserFeiyong {get;set;}
      public int UserDoctor {get;set;}
      public int UserGroup {get;set;}
-     public bool UserTangniaobing { get; set; }
-     public bool UserGaoxueya { get; set; }
-     public bool UserYunfu { get; set; }
-     public bool UserErtong {get;set;}
-
+     public string UserClass { get; set; }
      public string UserNowAddress { get; set; }
      public string UserOldAddress { get; set; }
      public string UserJobGroup { get; set; }
+     public string UserDiy1{ get; set; }
+     public string UserDiy2 { get; set; }
+     public string UserDiy3 { get; set; }
+     public string UserDiy4 { get; set; }
+     public string UserDiy5 { get; set; }
+     public string UserDiy6 { get; set; }
+     public string UserBeizhu { get; set; }
+
     }
 }

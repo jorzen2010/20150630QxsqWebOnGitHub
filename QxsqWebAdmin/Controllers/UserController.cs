@@ -20,7 +20,7 @@ namespace QxsqWebAdmin.Controllers
 
 
             string strwhere = "UserId>0";
-            string table = "QxsqUser";
+            string table = "JkptUser";
 
             Pager pager = new Pager();
             pager.PageSize = 2;
@@ -39,6 +39,12 @@ namespace QxsqWebAdmin.Controllers
         #region 客户添加
         public ActionResult UserAdd()
         {
+            ViewData["UserSexList"] = UserCommonBll.GetUserInfoForSelect("UserSex");
+            ViewData["UserHujiList"] = UserCommonBll.GetUserInfoForSelect("UserHuji");
+            ViewData["UserMinzuList"] = UserCommonBll.GetUserInfoForSelect("UserMinzu");
+            ViewData["UserZhiyeList"] = UserCommonBll.GetUserInfoForSelect("UserZhiye");
+            ViewData["UserHunyinList"] = UserCommonBll.GetUserInfoForSelect("UserHunyin");
+            ViewData["UserWenhuaList"] = UserCommonBll.GetUserInfoForSelect("UserWenhua");
             return View();
 
         }
@@ -47,7 +53,7 @@ namespace QxsqWebAdmin.Controllers
         #region 客户编辑
         public ActionResult UserEdit(int UserId)
         {
-            string table="QxsqUser";
+            string table = "JkptUser";
             string strwhere="UserId="+UserId;
             UserDto userDto = UserBll.GetOneUserDto(table, strwhere);
 
@@ -72,14 +78,17 @@ namespace QxsqWebAdmin.Controllers
             model.UserFeiyong = userDto.UserFeiyong;
             model.UserDoctor = userDto.UserDoctor;
             model.UserGroup = userDto.UserGroup;
-            model.UserTangniaobing = userDto.UserTangniaobing;
-            model.UserGaoxueya = userDto.UserGaoxueya;
-            model.UserYunfu = userDto.UserYunfu;
-            model.UserErtong = userDto.UserErtong;
+            model.UserClass = userDto.UserClass;
             model.UserNowAddress = userDto.UserNowAddress;
             model.UserOldAddress = userDto.UserOldAddress;
             model.UserJobGroup = userDto.UserJobGroup;
-            
+            model.UserDiy1 = userDto.UserDiy1;
+            model.UserDiy2 = userDto.UserDiy2;
+            model.UserDiy3 = userDto.UserDiy3;
+            model.UserDiy4 = userDto.UserDiy4;
+            model.UserDiy5 = userDto.UserDiy5;
+            model.UserDiy6 = userDto.UserDiy6;
+            model.UserBeizhu = userDto.UserBeizhu;
 
             return View(model);
 
@@ -111,13 +120,17 @@ namespace QxsqWebAdmin.Controllers
             userDto.UserFeiyong = model.UserFeiyong;
             userDto.UserDoctor = model.UserDoctor;
             userDto.UserGroup = model.UserGroup;
-            userDto.UserTangniaobing = model.UserTangniaobing;
-            userDto.UserGaoxueya = model.UserGaoxueya;
-            userDto.UserYunfu = model.UserYunfu;
-            userDto.UserErtong = model.UserErtong;
+            userDto.UserClass = model.UserClass;
             userDto.UserNowAddress = model.UserNowAddress;
             userDto.UserOldAddress = model.UserOldAddress;
             userDto.UserJobGroup = model.UserJobGroup;
+            userDto.UserDiy1 = model.UserDiy1;
+            userDto.UserDiy2 = model.UserDiy2;
+            userDto.UserDiy3 = model.UserDiy3;
+            userDto.UserDiy4 = model.UserDiy4;
+            userDto.UserDiy5 = model.UserDiy5;
+            userDto.UserDiy6 = model.UserDiy6;
+            userDto.UserBeizhu = model.UserBeizhu;
 
             UserBll.AddUser(userDto);
 
@@ -132,7 +145,7 @@ namespace QxsqWebAdmin.Controllers
         [HttpPost]
         public ActionResult UserUpdate(UserEditViewModel model)
         {
-            string table = "QxsqUser";
+            string table = "JkptUser";
             string strwhere = "UserId=" + model.UserId;
             UserDto userDto = UserBll.GetOneUserDto(table,strwhere);
             userDto.UserPassword = model.UserPassword;
@@ -153,13 +166,17 @@ namespace QxsqWebAdmin.Controllers
             userDto.UserFeiyong = model.UserFeiyong;
             userDto.UserDoctor = model.UserDoctor;
             userDto.UserGroup = model.UserGroup;
-            userDto.UserTangniaobing = model.UserTangniaobing;
-            userDto.UserGaoxueya = model.UserGaoxueya;
-            userDto.UserYunfu = model.UserYunfu;
-            userDto.UserErtong = model.UserErtong;
+            userDto.UserClass = model.UserClass;
             userDto.UserNowAddress = model.UserNowAddress;
             userDto.UserOldAddress = model.UserOldAddress;
             userDto.UserJobGroup = model.UserJobGroup;
+            userDto.UserDiy1 = model.UserDiy1;
+            userDto.UserDiy2 = model.UserDiy2;
+            userDto.UserDiy3 = model.UserDiy3;
+            userDto.UserDiy4 = model.UserDiy4;
+            userDto.UserDiy5 = model.UserDiy5;
+            userDto.UserDiy6 = model.UserDiy6;
+            userDto.UserBeizhu = model.UserBeizhu;
 
 
 
@@ -176,7 +193,7 @@ namespace QxsqWebAdmin.Controllers
         #region 客户删除动作
         public ActionResult UserDelete(int UserId)
         {
-            string table = "QxsqUser";
+            string table = "JkptUser";
             string strwhere = "UserId=" + UserId;
             UserBll.DeleteUserDto(table, strwhere);
 

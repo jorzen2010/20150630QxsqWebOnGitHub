@@ -33,7 +33,7 @@ namespace QxsqWebAdmin.Controllers
             guahaoDto.GuahaoTel = model.GuahaoTel;
             guahaoDto.GuahaoInfo = model.GuahaoInfo;
             guahaoDto.GuahaoDateTime = System.DateTime.Now;
-            guahaoDto.GuahaoTime = System.DateTime.Now;
+            guahaoDto.GuahaoTime = model.GuahaoTime;
             guahaoDto.GuahaoStatus = model.GuahaoStatus;
             guahaoDto.GuahaoDoctor = model.GuahaoDoctor;
             guahaoDto.GuahaoGroup = model.GuahaoGroup;

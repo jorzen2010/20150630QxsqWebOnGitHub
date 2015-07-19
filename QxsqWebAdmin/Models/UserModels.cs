@@ -11,7 +11,6 @@ namespace QxsqWebAdmin.Models
     #region 模块添加模型
     public class UserAddViewModel
     {
-        [Required]
         [Display(Name = "用户密码")]
         public string UserPassword { get; set; }
         [Required]
@@ -35,57 +34,51 @@ namespace QxsqWebAdmin.Models
         [Required]
         [Display(Name = "联系人电话")]
         public string UserFirstPersonTel { get; set; }
-        [Required]
         [Display(Name = "乡镇（街道）名称")]
         public string UserJiedaoName { get; set; }
-        [Required]
         [Display(Name = "村（居）委会名称")]
         public string UserJuweihuiName { get; set; }
-        [Required]
         [Display(Name = "常住类型")]
         public string UserHuji { get; set; }
-        [Required]
         [Display(Name = "民族")]
         public string UserMinzu { get; set; }
-        [Required]
         [Display(Name = "文化程度")]
         public string UserWenhua { get; set; }
-        [Required]
         [Display(Name = "职业")]
         public string UserZhiye { get; set; }
-        [Required]
         [Display(Name = "婚姻状况")]
         public string UserHunyin { get; set; }
-        [Required]
         [Display(Name = "医疗费用支付方式")]
         public string UserFeiyong { get; set; }
-        [Required]
         [Display(Name = "责任医生")]
         public int UserDoctor { get; set; }
-        [Required]
         [Display(Name = "所属组织")]
         public int UserGroup { get; set; }
         [Required]
-        [Display(Name = "糖尿病患者")]
-        public bool UserTangniaobing { get; set; }
-        [Required]
-        [Display(Name = "高血压患者")]
-        public bool UserGaoxueya { get; set; }
-        [Required]
-        [Display(Name = "孕妇保健")]
-        public bool UserYunfu { get; set; }
-        [Required]
-        [Display(Name = "儿童保健")]
-        public bool UserErtong { get; set; }
-        [Required]
+        [Display(Name = "用户归档")]
+        public string UserClass { get; set; }       
         [Display(Name = "现住址")]
         public string UserNowAddress { get; set; }
-        [Required]
         [Display(Name = "户籍地址")]
         public string UserOldAddress { get; set; }
-        [Required]
         [Display(Name = "工作单位")]
         public string UserJobGroup { get; set; }
+
+        [Display(Name = "备注")]
+        public string UserBeizhu { get; set; }
+
+        [Display(Name = "自定义1")]
+        public string UserDiy1 { get; set; }
+        [Display(Name = "自定义2")]
+        public string UserDiy2 { get; set; }
+        [Display(Name = "自定义3")]
+        public string UserDiy3 { get; set; }
+        [Display(Name = "自定义4")]
+        public string UserDiy4 { get; set; }
+        [Display(Name = "自定义5")]
+        public string UserDiy5 { get; set; }
+        [Display(Name = "自定义6")]
+        public string UserDiy6 { get; set; }
     
     }
     #endregion
@@ -96,7 +89,6 @@ namespace QxsqWebAdmin.Models
         [Required]
         [Display(Name = "用户Id")]
         public int UserId { get; set; }
-        [Required]
         [Display(Name = "用户密码")]
         public string UserPassword { get; set; }
         [Required]
@@ -120,57 +112,52 @@ namespace QxsqWebAdmin.Models
         [Required]
         [Display(Name = "联系人电话")]
         public string UserFirstPersonTel { get; set; }
-        [Required]
         [Display(Name = "乡镇（街道）名称")]
         public string UserJiedaoName { get; set; }
-        [Required]
         [Display(Name = "村（居）委会名称")]
         public string UserJuweihuiName { get; set; }
-        [Required]
         [Display(Name = "常住类型")]
         public string UserHuji { get; set; }
-        [Required]
         [Display(Name = "民族")]
         public string UserMinzu { get; set; }
-        [Required]
         [Display(Name = "文化程度")]
         public string UserWenhua { get; set; }
-        [Required]
         [Display(Name = "职业")]
         public string UserZhiye { get; set; }
-        [Required]
         [Display(Name = "婚姻状况")]
         public string UserHunyin { get; set; }
-        [Required]
         [Display(Name = "医疗费用支付方式")]
         public string UserFeiyong { get; set; }
-        [Required]
         [Display(Name = "责任医生")]
         public int UserDoctor { get; set; }
-        [Required]
         [Display(Name = "所属组织")]
         public int UserGroup { get; set; }
         [Required]
-        [Display(Name = "糖尿病患者")]
-        public bool UserTangniaobing { get; set; }
-        [Required]
-        [Display(Name = "高血压患者")]
-        public bool UserGaoxueya { get; set; }
-        [Required]
-        [Display(Name = "孕妇保健")]
-        public bool UserYunfu { get; set; }
-        [Required]
-        [Display(Name = "儿童保健")]
-        public bool UserErtong { get; set; }
-        [Required]
+        [Display(Name = "用户归档")]
+        public string UserClass { get; set; }
         [Display(Name = "现住址")]
         public string UserNowAddress { get; set; }
-        [Required]
         [Display(Name = "户籍地址")]
         public string UserOldAddress { get; set; }
-        [Required]
         [Display(Name = "工作单位")]
         public string UserJobGroup { get; set; }
+
+        [Display(Name = "备注")]
+        public string UserBeizhu { get; set; }
+
+        [Display(Name = "自定义1")]
+        public string UserDiy1 { get; set; }
+        [Display(Name = "自定义2")]
+        public string UserDiy2 { get; set; }
+        [Display(Name = "自定义3")]
+        public string UserDiy3 { get; set; }
+        [Display(Name = "自定义4")]
+        public string UserDiy4 { get; set; }
+        [Display(Name = "自定义5")]
+        public string UserDiy5 { get; set; }
+        [Display(Name = "自定义6")]
+        public string UserDiy6 { get; set; }
+    
 
     }
     #endregion

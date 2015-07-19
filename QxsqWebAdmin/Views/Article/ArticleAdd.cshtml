@@ -48,57 +48,58 @@
                               
                                
                             </div>
+                    
+                              <div class="form-group">
 
-                          <div class="form-group">
-
-                              @Html.LabelFor(model => model.ArticleClass) 
-                              @Html.ValidationMessageFor(model => model.ArticleImg)
-                              @Html.DropDownListFor(model => model.ArticleClass, ViewData["ArticleClassList"] as IEnumerable<SelectListItem>, new { @class = "form-control" })
-
-
-                          </div>
-                          <div class="form-group">
-
-                              @Html.LabelFor(model => model.ArticleInfo)  @Html.ValidationMessageFor(model => model.ArticleInfo)
-                              @Html.TextAreaFor(model => model.ArticleInfo, new { @class = "form-control" })
+                                  @Html.LabelFor(model => model.ArticleClass)
+                                  @Html.ValidationMessageFor(model => model.ArticleImg)
+                                  @Html.DropDownListFor(model => model.ArticleClass, ViewData["ArticleClassList"] as IEnumerable<SelectListItem>, new { @class = "form-control" })
 
 
                           </div>
+                      
+                              <div class="form-group">
 
-                            <div class="form-group">
-                                
-                                    @Html.LabelFor(model => model.ArticleImg)  @Html.ValidationMessageFor(model => model.ArticleImg)
-                                    @Html.EditorFor(model => model.ArticleImg, new { @class = "form-control" })
-                                 
-                            
-                            </div>
-                   
-                          <div class="form-group">
-                              @Html.LabelFor(model => model.ArticleContent)  @Html.ValidationMessageFor(model => model.ArticleContent)
-                              <textarea id="myEditor" name="ArticleContent" style="width:1000px;height:240px;">
-                                  <p>这里我可以写一些输入提示</p>
-                              </textarea>
-                          </div>
-                          <div class="form-group">
-
-                              @Html.LabelFor(model => model.ArticleTop)  @Html.ValidationMessageFor(model => model.ArticleTop)
-                              &nbsp;&nbsp;&nbsp;&nbsp;@Html.EditorFor(model => model.ArticleTop, new { @class = "form-control" })
-                              &nbsp;&nbsp;&nbsp;&nbsp;
-                              @Html.LabelFor(model => model.ArticleHot)  @Html.ValidationMessageFor(model => model.ArticleHot)
-                              &nbsp;&nbsp;&nbsp;&nbsp;@Html.EditorFor(model => model.ArticleHot, new { @class = "form-control" })
-                              &nbsp;&nbsp;&nbsp;&nbsp;
-                              @Html.LabelFor(model => model.ArticleImportant)  @Html.ValidationMessageFor(model => model.ArticleImportant)
-                              &nbsp;&nbsp;&nbsp;&nbsp; @Html.EditorFor(model => model.ArticleImportant, new { @class = "form-control" })
+                                  @Html.LabelFor(model => model.ArticleInfo)  @Html.ValidationMessageFor(model => model.ArticleInfo)
+                                  @Html.TextAreaFor(model => model.ArticleInfo, new { @class = "form-control" })
 
 
-                          </div>
-                           
+                              </div>
 
-                           
-                        
+                              <div class="form-group">
 
-                           
-                        </div><!-- /.box-body -->
+                                  @Html.LabelFor(model => model.ArticleImg)  @Html.ValidationMessageFor(model => model.ArticleImg)
+                                  @Html.EditorFor(model => model.ArticleImg, new { @class = "form-control" })
+
+
+                              </div>
+
+                              <div class="form-group">
+                                  @Html.LabelFor(model => model.ArticleContent)  @Html.ValidationMessageFor(model => model.ArticleContent)
+                                  <textarea id="myEditor" name="ArticleContent" style="width:1000px;height:240px;">
+                                      <p>这里我可以写一些输入提示</p>
+                                  </textarea>
+                              </div>
+                              <div class="form-group">
+
+                                  @Html.LabelFor(model => model.ArticleTop)  @Html.ValidationMessageFor(model => model.ArticleTop)
+                                  &nbsp;&nbsp;&nbsp;&nbsp;@Html.EditorFor(model => model.ArticleTop, new { @class = "form-control" })
+                                  &nbsp;&nbsp;&nbsp;&nbsp;
+                                  @Html.LabelFor(model => model.ArticleHot)  @Html.ValidationMessageFor(model => model.ArticleHot)
+                                  &nbsp;&nbsp;&nbsp;&nbsp;@Html.EditorFor(model => model.ArticleHot, new { @class = "form-control" })
+                                  &nbsp;&nbsp;&nbsp;&nbsp;
+                                  @Html.LabelFor(model => model.ArticleImportant)  @Html.ValidationMessageFor(model => model.ArticleImportant)
+                                  &nbsp;&nbsp;&nbsp;&nbsp; @Html.EditorFor(model => model.ArticleImportant, new { @class = "form-control" })
+
+
+                              </div>
+
+
+
+
+
+
+                          </div><!-- /.box-body -->
 
                         <div class="box-footer">
                             <button type="submit" class="btn btn-primary">立刻保存</button>

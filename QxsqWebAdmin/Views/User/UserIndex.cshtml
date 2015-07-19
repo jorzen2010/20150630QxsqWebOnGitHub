@@ -1,5 +1,5 @@
 ﻿@{
-    ViewBag.Title = "挂号";
+    ViewBag.Title = "客户列表";
 }
 
 <link href="/css/page.css" rel="stylesheet" type="text/css" />
@@ -42,85 +42,30 @@
                         状态类型：
                       
                         <a href="/Guahao/GuahaoIndex?status=0"> <button class="btn btn-sm btn-primary">全部</button></a>
-                        <a href="/Guahao/GuahaoIndex?status=1">  <button class="btn btn-sm btn-warning">预约待付款</button></a>
-                        <a href="/Guahao/GuahaoIndex?status=2">  <button class="btn btn-sm btn-info">挂号完成</button></a>
-                        <a href="/Guahao/GuahaoIndex?status=3">  <button class="btn btn-sm btn-danger">已过期</button></a>
+                        <a href="/Guahao/GuahaoIndex?status=1">  <button class="btn btn-sm btn-warning">孕妇</button></a>
+                        <a href="/Guahao/GuahaoIndex?status=2">  <button class="btn btn-sm btn-info">儿童</button></a>
+                        <a href="/Guahao/GuahaoIndex?status=3">  <button class="btn btn-sm btn-danger">高血压</button></a>
+                        <a href="/Guahao/GuahaoIndex?status=3">  <button class="btn btn-sm btn-danger">糖尿病</button></a>
                     </h4> <div class="box-body table-responsive no-padding">
    <table class="table table-hover">
                             <tr>
                                 <th>序号</th>
                                 <th>患者姓名</th>   
                                 <th>患者手机</th>                             
-                                <th>预约日期</th>
-                               
-                                <th>挂号状态</th>
+                                <th>患者性别</th>
                                 <th>操作</th>
                             </tr>
 
 @foreach (var item in Model)
             {
                             <tr>
-                                <td>@item.GuahaoId</td>
-                                <td>@item.GuahaoName</td>
-                                <td>@item.GuahaoTel</td>
+                                <td>@item.UserId</td>
+                                <td>@item.UserName</td>
+                                <td>@item.UserTel</td>
                            
-                                <td>@item.GuahaoTime </td>
-                                @if(item.GuahaoTime>System.DateTime.Now)
-                               
-                                { <td>
-                                    <button class="btn btn-sm btn-success disabled">
-                                        挂号状态正常
-                                     </button>
-                                   
-                                  
-                                </td>}
-    else
-                            {   
-                                <td>
-                                   
-                                        <button class="btn btn-sm btn-danger disabled">警告：此挂号已经过期</button>
-                                  
-
-                                </td>
-                                }
-
-                                <td>
-                                   @if (item.GuahaoStatus == 1)
-                                       { 
-                                       
-                                        if (item.GuahaoTime > System.DateTime.Now)
-                                        { 
-                                       
-                                       <button class="btn btn-sm btn-warning" onclick="GuahaoPay(@item.GuahaoId,@item.GuahaoStatus+1)">
-                                       
-                                           成功预约，等待付款
-                                      
-                                    </button>
-                                        }
-                                        else
-                                        {
-                                            <button class="btn btn-sm btn-danger" onclick="GuahaoPay(@item.GuahaoId,3)">
-
-                                                确认设置此挂号过期
-
-                                            </button>
-                                        }
-
-
-                                       }
-                                    @if (item.GuahaoStatus == 2)
-{ <button class="btn btn-sm btn-info disabled">
-        成功付款，挂号完成
-    </button>
-}
-                                    @if (item.GuahaoStatus == 3)
-{ <button class="btn btn-sm btn-danger disabled">
-
-        此挂号已经确认过期
-
-    </button>
-}
-                                </td>
+                                <td>@item.UserSex </td>
+                                <td>编辑，删除</td>
+                              
                             </tr>
 }
 

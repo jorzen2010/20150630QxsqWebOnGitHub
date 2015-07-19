@@ -97,7 +97,7 @@ namespace QxsqDAL
         #region 将DTO映射成数据库参数
         private static SqlParameter[] getParameters(UserDto userDto)
         {
-            SqlParameter[] arParames = new SqlParameter[23];
+            SqlParameter[] arParames = new SqlParameter[30];
 
 
             arParames[0] = new SqlParameter("@UserId", SqlDbType.Int);
@@ -157,30 +157,40 @@ namespace QxsqDAL
             arParames[18] = new SqlParameter("@UserGroup", SqlDbType.Int);
             arParames[18].Value = userDto.UserGroup;
 
-            arParames[19] = new SqlParameter("@UserTangniaobing", SqlDbType.Bit);
-            arParames[19].Value = userDto.UserTangniaobing;
+            arParames[19] = new SqlParameter("@UserClass", SqlDbType.VarChar, 500);
+            arParames[19].Value = userDto.UserClass;
 
-            arParames[20] = new SqlParameter("@UserGaoxueya", SqlDbType.Bit);
-            arParames[20].Value = userDto.UserGaoxueya;
+            arParames[20] = new SqlParameter("@UserNowAddress", SqlDbType.VarChar, 500);
+            arParames[20].Value = userDto.UserNowAddress;
 
-            arParames[21] = new SqlParameter("@UserYunfu", SqlDbType.Bit);
-            arParames[21].Value = userDto.UserYunfu;
+            arParames[21] = new SqlParameter("@UserOldAddress", SqlDbType.VarChar, 500);
+            arParames[21].Value = userDto.UserOldAddress;
 
-            arParames[22] = new SqlParameter("@UserErtong", SqlDbType.Bit);
-            arParames[22].Value = userDto.UserErtong;
+            arParames[22] = new SqlParameter("@UserJobGroup", SqlDbType.VarChar, 500);
+            arParames[22].Value = userDto.UserJobGroup;
 
-            arParames[23] = new SqlParameter("@UserNowAddress", SqlDbType.VarChar, 500);
-            arParames[23].Value = userDto.UserErtong;
+            arParames[23] = new SqlParameter("@UserDiy1", SqlDbType.VarChar, 500);
+            arParames[23].Value = userDto.UserDiy1;
 
-            arParames[24] = new SqlParameter("@UserOldAddress", SqlDbType.VarChar, 500);
-            arParames[24].Value = userDto.UserErtong;
+            arParames[24] = new SqlParameter("@UserDiy2", SqlDbType.VarChar, 500);
+            arParames[24].Value = userDto.UserDiy2;
 
-            arParames[25] = new SqlParameter("@UserJobGroup", SqlDbType.VarChar, 500);
-            arParames[25].Value = userDto.UserErtong;
+            arParames[25] = new SqlParameter("@UserDiy3", SqlDbType.VarChar, 500);
+            arParames[25].Value = userDto.UserDiy3;
+
+            arParames[26] = new SqlParameter("@UserDiy4", SqlDbType.VarChar, 500);
+            arParames[26].Value = userDto.UserDiy4;
+
+            arParames[27] = new SqlParameter("@UserDiy5", SqlDbType.VarChar, 500);
+            arParames[27].Value = userDto.UserDiy5;
+
+            arParames[28] = new SqlParameter("@UserDiy6", SqlDbType.VarChar, 500);
+            arParames[28].Value = userDto.UserDiy6;
+
+            arParames[29] = new SqlParameter("@UserBeizhu", SqlDbType.Text);
+            arParames[29].Value = userDto.UserBeizhu;
 
             
-
-
             return arParames;
         }
 
@@ -210,13 +220,18 @@ namespace QxsqDAL
             userDto.UserFeiyong = dr["UserFeiyong"].ToString();
             userDto.UserDoctor = int.Parse(dr["UserDoctor"].ToString());
             userDto.UserGroup = int.Parse(dr["UserGroup"].ToString());
-            userDto.UserTangniaobing = bool.Parse(dr["UserGroup"].ToString());
-            userDto.UserGaoxueya = bool.Parse(dr["UserGroup"].ToString());
-            userDto.UserYunfu = bool.Parse(dr["UserGroup"].ToString());
-            userDto.UserErtong = bool.Parse(dr["UserGroup"].ToString());
+            userDto.UserClass = dr["UserClass"].ToString();
             userDto.UserNowAddress = dr["UserNowAddress"].ToString();
             userDto.UserOldAddress = dr["UserOldAddress"].ToString();
             userDto.UserJobGroup = dr["UserJobGroup"].ToString();
+            userDto.UserDiy1 = dr["UserDiy1"].ToString();
+            userDto.UserDiy2 = dr["UserDiy2"].ToString();
+            userDto.UserDiy3 = dr["UserDiy3"].ToString();
+            userDto.UserDiy4 = dr["UserDiy4"].ToString();
+            userDto.UserDiy5 = dr["UserDiy5"].ToString();
+            userDto.UserDiy6 = dr["UserDiy6"].ToString();
+            userDto.UserBeizhu = dr["UserBeizhu"].ToString();
+
             
 
             return userDto;
@@ -248,13 +263,17 @@ namespace QxsqDAL
             userDto.UserFeiyong = dr["UserFeiyong"].ToString();
             userDto.UserDoctor = int.Parse(dr["UserDoctor"].ToString());
             userDto.UserGroup = int.Parse(dr["UserGroup"].ToString());
-            userDto.UserTangniaobing = bool.Parse(dr["UserGroup"].ToString());
-            userDto.UserGaoxueya = bool.Parse(dr["UserGroup"].ToString());
-            userDto.UserYunfu = bool.Parse(dr["UserGroup"].ToString());
-            userDto.UserErtong = bool.Parse(dr["UserGroup"].ToString());
+            userDto.UserClass = dr["UserClass"].ToString();
             userDto.UserNowAddress = dr["UserNowAddress"].ToString();
             userDto.UserOldAddress = dr["UserOldAddress"].ToString();
             userDto.UserJobGroup = dr["UserJobGroup"].ToString();
+            userDto.UserDiy1 = dr["UserDiy1"].ToString();
+            userDto.UserDiy2 = dr["UserDiy2"].ToString();
+            userDto.UserDiy3 = dr["UserDiy3"].ToString();
+            userDto.UserDiy4 = dr["UserDiy4"].ToString();
+            userDto.UserDiy5 = dr["UserDiy5"].ToString();
+            userDto.UserDiy6 = dr["UserDiy6"].ToString();
+            userDto.UserBeizhu = dr["UserBeizhu"].ToString();
 
             return userDto;
         }
