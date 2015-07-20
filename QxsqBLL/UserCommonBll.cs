@@ -12,7 +12,7 @@ namespace QxsqBLL
 {
     public class UserCommonBll
     {
-        #region 用户性别以下拉框显示
+        #region 用户属性以下拉框显示
         public static List<SelectListItem> GetUserInfoForSelect(string userInfoName)
         {
 

@@ -12,7 +12,7 @@ namespace QxsqDTO
      public string UserPassword { get; set; }
      public string UserName {get;set;}
      public string UserSex {get;set;}
-     public string UserBirthday {get;set;}
+     public DateTime UserBirthday {get;set;}
      public string UserNumber {get;set;}
      public string UserTel {get;set;}
      public string UserFirstPerson {get;set;}
@@ -24,7 +24,6 @@ namespace QxsqDTO
      public string UserWenhua {get;set;}
      public string UserZhiye {get;set;}
      public string UserHunyin {get;set;}
-     public string UserFeiyong {get;set;}
      public int UserDoctor {get;set;}
      public int UserGroup {get;set;}
      public string UserClass { get; set; }

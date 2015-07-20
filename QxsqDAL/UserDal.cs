@@ -97,37 +97,37 @@ namespace QxsqDAL
         #region 将DTO映射成数据库参数
         private static SqlParameter[] getParameters(UserDto userDto)
         {
-            SqlParameter[] arParames = new SqlParameter[30];
+            SqlParameter[] arParames = new SqlParameter[29];
 
 
             arParames[0] = new SqlParameter("@UserId", SqlDbType.Int);
             arParames[0].Value = userDto.UserId;
 
-            arParames[1] = new SqlParameter("@userDto.UserPassword ", SqlDbType.VarChar, 50);
+            arParames[1] = new SqlParameter("@UserPassword ", SqlDbType.VarChar, 50);
             arParames[1].Value = userDto.UserPassword;
 
-            arParames[2] = new SqlParameter("@userDto.UserName ", SqlDbType.VarChar, 50);
+            arParames[2] = new SqlParameter("@UserName ", SqlDbType.VarChar, 50);
             arParames[2].Value = userDto.UserName;
 
-            arParames[3] = new SqlParameter("@userDto.UserSex ", SqlDbType.VarChar, 50);
+            arParames[3] = new SqlParameter("@UserSex ", SqlDbType.VarChar, 50);
             arParames[3].Value = userDto.UserSex;
 
-            arParames[4] = new SqlParameter("@userDto.UserBirthday ", SqlDbType.VarChar, 50);
+            arParames[4] = new SqlParameter("@UserBirthday ", SqlDbType.DateTime);
             arParames[4].Value = userDto.UserBirthday;
 
-            arParames[5] = new SqlParameter("@userDto.UserNumber ", SqlDbType.VarChar, 50);
+            arParames[5] = new SqlParameter("@UserNumber ", SqlDbType.VarChar, 50);
             arParames[5].Value = userDto.UserNumber;
 
-            arParames[6] = new SqlParameter("@userDto.UserTel ", SqlDbType.VarChar, 50);
+            arParames[6] = new SqlParameter("@UserTel ", SqlDbType.VarChar, 50);
             arParames[6].Value = userDto.UserTel;
 
-            arParames[7] = new SqlParameter("@userDto.UserFirstPerson ", SqlDbType.VarChar, 50);
+            arParames[7] = new SqlParameter("@UserFirstPerson ", SqlDbType.VarChar, 50);
             arParames[7].Value = userDto.UserFirstPerson;
 
-            arParames[8] = new SqlParameter("@userDto.UserFirstPersonTel ", SqlDbType.VarChar, 50);
+            arParames[8] = new SqlParameter("@UserFirstPersonTel ", SqlDbType.VarChar, 50);
             arParames[8].Value = userDto.UserFirstPersonTel;
 
-            arParames[9] = new SqlParameter("@userDto.UserJiedaoName ", SqlDbType.VarChar, 50);
+            arParames[9] = new SqlParameter("@UserJiedaoName ", SqlDbType.VarChar, 50);
             arParames[9].Value = userDto.UserJiedaoName;
 
             arParames[10] = new SqlParameter("@UserJuweihuiName", SqlDbType.VarChar, 50);
@@ -148,8 +148,8 @@ namespace QxsqDAL
             arParames[15] = new SqlParameter("@UserHunyin", SqlDbType.VarChar, 50);
             arParames[15].Value = userDto.UserHunyin;
 
-            arParames[16] = new SqlParameter("@UserFeiyong", SqlDbType.VarChar, 50);
-            arParames[16].Value = userDto.UserFeiyong;
+            arParames[16] = new SqlParameter("@UserBeizhu", SqlDbType.Text);
+            arParames[16].Value = userDto.UserBeizhu;
 
             arParames[17] = new SqlParameter("@UserDoctor", SqlDbType.Int);
             arParames[17].Value = userDto.UserDoctor;
@@ -187,8 +187,7 @@ namespace QxsqDAL
             arParames[28] = new SqlParameter("@UserDiy6", SqlDbType.VarChar, 500);
             arParames[28].Value = userDto.UserDiy6;
 
-            arParames[29] = new SqlParameter("@UserBeizhu", SqlDbType.Text);
-            arParames[29].Value = userDto.UserBeizhu;
+
 
             
             return arParames;
@@ -205,7 +204,7 @@ namespace QxsqDAL
             userDto.UserPassword = dr["UserPassword"].ToString();
             userDto.UserName = dr["UserName"].ToString();
             userDto.UserSex = dr["UserSex"].ToString();
-            userDto.UserBirthday = dr["UserBirthday"].ToString();
+            userDto.UserBirthday =DateTime.Parse(dr["UserBirthday"].ToString());
             userDto.UserNumber = dr["UserNumber"].ToString();
             userDto.UserTel = dr["UserTel"].ToString();
             userDto.UserFirstPerson = dr["UserFirstPerson"].ToString();
@@ -217,7 +216,6 @@ namespace QxsqDAL
             userDto.UserWenhua = dr["UserWenhua"].ToString();
             userDto.UserZhiye = dr["UserZhiye"].ToString();
             userDto.UserHunyin = dr["UserHunyin"].ToString();
-            userDto.UserFeiyong = dr["UserFeiyong"].ToString();
             userDto.UserDoctor = int.Parse(dr["UserDoctor"].ToString());
             userDto.UserGroup = int.Parse(dr["UserGroup"].ToString());
             userDto.UserClass = dr["UserClass"].ToString();
@@ -248,7 +246,7 @@ namespace QxsqDAL
             userDto.UserPassword = dr["UserPassword"].ToString();
             userDto.UserName = dr["UserName"].ToString();
             userDto.UserSex = dr["UserSex"].ToString();
-            userDto.UserBirthday = dr["UserBirthday"].ToString();
+            userDto.UserBirthday = DateTime.Parse(dr["UserBirthday"].ToString());
             userDto.UserNumber = dr["UserNumber"].ToString();
             userDto.UserTel = dr["UserTel"].ToString();
             userDto.UserFirstPerson = dr["UserFirstPerson"].ToString();
@@ -260,7 +258,6 @@ namespace QxsqDAL
             userDto.UserWenhua = dr["UserWenhua"].ToString();
             userDto.UserZhiye = dr["UserZhiye"].ToString();
             userDto.UserHunyin = dr["UserHunyin"].ToString();
-            userDto.UserFeiyong = dr["UserFeiyong"].ToString();
             userDto.UserDoctor = int.Parse(dr["UserDoctor"].ToString());
             userDto.UserGroup = int.Parse(dr["UserGroup"].ToString());
             userDto.UserClass = dr["UserClass"].ToString();

@@ -23,7 +23,7 @@ namespace QxsqWebAdmin.Controllers
             string table = "JkptUser";
 
             Pager pager = new Pager();
-            pager.PageSize = 2;
+            pager.PageSize = 20;
             pager.PageNo = p ?? 1;
 
             pager = UserBll.GetUserPager(pager, strwhere, table);
@@ -75,7 +75,6 @@ namespace QxsqWebAdmin.Controllers
             model.UserWenhua = userDto.UserWenhua;
             model.UserZhiye = userDto.UserZhiye;
             model.UserHunyin = userDto.UserHunyin;
-            model.UserFeiyong = userDto.UserFeiyong;
             model.UserDoctor = userDto.UserDoctor;
             model.UserGroup = userDto.UserGroup;
             model.UserClass = userDto.UserClass;
@@ -117,7 +116,6 @@ namespace QxsqWebAdmin.Controllers
             userDto.UserWenhua = model.UserWenhua;
             userDto.UserZhiye = model.UserZhiye;
             userDto.UserHunyin = model.UserHunyin;
-            userDto.UserFeiyong = model.UserFeiyong;
             userDto.UserDoctor = model.UserDoctor;
             userDto.UserGroup = model.UserGroup;
             userDto.UserClass = model.UserClass;
@@ -163,7 +161,6 @@ namespace QxsqWebAdmin.Controllers
             userDto.UserWenhua = model.UserWenhua;
             userDto.UserZhiye = model.UserZhiye;
             userDto.UserHunyin = model.UserHunyin;
-            userDto.UserFeiyong = model.UserFeiyong;
             userDto.UserDoctor = model.UserDoctor;
             userDto.UserGroup = model.UserGroup;
             userDto.UserClass = model.UserClass;
