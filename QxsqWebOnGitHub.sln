@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.21005.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QxsqWebOnGitHub", "QxsqWebOnGitHub\QxsqWebOnGitHub.csproj", "{2F032D7A-C952-4A82-B74D-832B5F17919B}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common", "Common\Common.csproj", "{DB43EFF1-84D8-4976-8978-4BBF10F5D7CE}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{ECF7F1F6-596C-4C22-B68D-0A35E349EDA2}"
@@ -22,18 +20,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QxsqBLL", "QxsqBLL\QxsqBLL.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QxsqDAL", "QxsqDAL\QxsqDAL.csproj", "{9CC94BF5-29BF-44DC-923D-428A7157D940}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CrmWeb", "CrmWeb\CrmWeb.csproj", "{0422059E-1011-42B3-A25B-76637D1F5FA8}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{2F032D7A-C952-4A82-B74D-832B5F17919B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2F032D7A-C952-4A82-B74D-832B5F17919B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2F032D7A-C952-4A82-B74D-832B5F17919B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{2F032D7A-C952-4A82-B74D-832B5F17919B}.Release|Any CPU.Build.0 = Release|Any CPU
 		{DB43EFF1-84D8-4976-8978-4BBF10F5D7CE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{DB43EFF1-84D8-4976-8978-4BBF10F5D7CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DB43EFF1-84D8-4976-8978-4BBF10F5D7CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -54,10 +46,6 @@ Global
 		{9CC94BF5-29BF-44DC-923D-428A7157D940}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9CC94BF5-29BF-44DC-923D-428A7157D940}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9CC94BF5-29BF-44DC-923D-428A7157D940}.Release|Any CPU.Build.0 = Release|Any CPU
-		{0422059E-1011-42B3-A25B-76637D1F5FA8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0422059E-1011-42B3-A25B-76637D1F5FA8}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0422059E-1011-42B3-A25B-76637D1F5FA8}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0422059E-1011-42B3-A25B-76637D1F5FA8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -41,6 +41,7 @@
   <ItemGroup>
     <Compile Include="ArticleClassDto.cs" />
     <Compile Include="ArticleDto.cs" />
+    <Compile Include="EditorDto.cs" />
     <Compile Include="GroupDto.cs" />
     <Compile Include="GuahaoDto.cs" />
     <Compile Include="MokuaiDto.cs" />
