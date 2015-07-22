@@ -46,7 +46,7 @@
     <Compile Include="ArticleBll.cs" />
     <Compile Include="GuahaoBll.cs" />
     <Compile Include="MokuaiBll.cs" />
-    <Compile Include="EditorBll.cs" />
+    <Compile Include="DoctorBll.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UserBll.cs" />
     <Compile Include="UserCommonBll.cs" />

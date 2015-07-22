@@ -11,26 +11,26 @@ using Common;
 
 namespace QxsqDAL
 {
-    public class EditorDal
+    public class DoctorDal
     {
 
        #region 网站管理员添加
 
-        public static void AddEditor(EditorDto editorDto)
+        public static void AddDoctor(DoctorDto doctorDto)
         {
 
-            SqlParameter[] arParames = EditorDal.getParameters(editorDto);
+            SqlParameter[] arParames = DoctorDal.getParameters(doctorDto);
 
-            SqlHelper.ExecuteNonQuery(CommonDal.ConnectionString, CommandType.StoredProcedure, "CreateEditor", arParames);
+            SqlHelper.ExecuteNonQuery(CommonDal.ConnectionString, CommandType.StoredProcedure, "CreateDoctor", arParames);
 
         }
         #endregion
 
         #region 获取一个网站管理员DTO
 
-        public static EditorDto GetOneEditor(string table,string strwhere)
+        public static DoctorDto GetOneDoctor(string table,string strwhere)
         {
-            EditorDto editorDto = new EditorDto();
+            DoctorDto doctorDto = new DoctorDto();
 
             SqlParameter[] arParames = new SqlParameter[2];
             arParames[0] = new SqlParameter("@table ", SqlDbType.VarChar, 200);
@@ -46,27 +46,27 @@ namespace QxsqDAL
             foreach (DataRow dr in dt.Rows)
             {
 
-                editorDto = EditorDal.getDataRowToEditorDto(dr);
+                doctorDto = DoctorDal.getDataRowToDoctorDto(dr);
 
             }
 
 
-            return editorDto;
+            return doctorDto;
 
 
 
         }
         #endregion
         #region 获取网站管理员List数据
-        public static List<EditorDto> GetEditorList(string strwhere)
+        public static List<DoctorDto> GetDoctorList(string strwhere)
         {
-            List<EditorDto> editorlist = new List<EditorDto>();
+            List<DoctorDto> doctorlist = new List<DoctorDto>();
 
 
 
             SqlParameter[] arParames = new SqlParameter[2];
             arParames[0] = new SqlParameter("@table ", SqlDbType.VarChar, 200);
-            arParames[0].Value = "QxsqEditor";
+            arParames[0].Value = "QxsqDoctor";
 
             arParames[1] = new SqlParameter("@Where ", SqlDbType.VarChar, 8000);
             arParames[1].Value = strwhere;
@@ -76,40 +76,40 @@ namespace QxsqDAL
             dt = ds.Tables[0];
             foreach (DataRow dr in dt.Rows)
             {
-                EditorDto editorDto = new EditorDto();
+                DoctorDto doctorDto = new DoctorDto();
 
-                editorDto = EditorDal.getDataRowToEditorDto(dr);
+                doctorDto = DoctorDal.getDataRowToDoctorDto(dr);
 
 
-                editorlist.Add(editorDto);
+                doctorlist.Add(doctorDto);
 
             }
 
-            return editorlist;
+            return doctorlist;
 
         }
         #endregion
 
         #region 将DTO映射成数据库参数
-        private static SqlParameter[] getParameters(EditorDto editorDto)
+        private static SqlParameter[] getParameters(DoctorDto doctorDto)
         {
             SqlParameter[] arParames = new SqlParameter[5];
 
 
-            arParames[0] = new SqlParameter("@EditorId", SqlDbType.Int);
-            arParames[0].Value = editorDto.EditorId;
+            arParames[0] = new SqlParameter("@DoctorId", SqlDbType.Int);
+            arParames[0].Value = doctorDto.DoctorId;
 
-            arParames[1] = new SqlParameter("@EditorUserName", SqlDbType.VarChar, 50);
-            arParames[1].Value = editorDto.EditorUserName;
+            arParames[1] = new SqlParameter("@DoctorUserName", SqlDbType.VarChar, 50);
+            arParames[1].Value = doctorDto.DoctorUserName;
 
-            arParames[2] = new SqlParameter("@EditorPassword", SqlDbType.VarChar, 50);
-            arParames[2].Value = editorDto.EditorPassword;
+            arParames[2] = new SqlParameter("@DoctorPassword", SqlDbType.VarChar, 50);
+            arParames[2].Value = doctorDto.DoctorPassword;
 
-            arParames[3] = new SqlParameter("@EditorRealName", SqlDbType.VarChar, 50);
-            arParames[3].Value = editorDto.EditorRealName;
+            arParames[3] = new SqlParameter("@DoctorRealName", SqlDbType.VarChar, 50);
+            arParames[3].Value = doctorDto.DoctorRealName;
 
-            arParames[4] = new SqlParameter("@EditorRegTime", SqlDbType.DateTime);
-            arParames[4].Value = editorDto.EditorRegTime;
+            arParames[4] = new SqlParameter("@DoctorRegTime", SqlDbType.DateTime);
+            arParames[4].Value = doctorDto.DoctorRegTime;
 
 
             return arParames;
@@ -118,43 +118,43 @@ namespace QxsqDAL
         #endregion
 
         #region 将数据集映射成DTO
-        private static EditorDto getDataRowToEditorDto(DataRow dr)
+        private static DoctorDto getDataRowToDoctorDto(DataRow dr)
         {
-            EditorDto editorDto = new EditorDto();
+            DoctorDto doctorDto = new DoctorDto();
 
-            editorDto.EditorId = int.Parse(dr["EditorId"].ToString());
-            editorDto.EditorUserName = dr["EditorUserName"].ToString();
-            editorDto.EditorRealName = dr["EditorRealName"].ToString();
+            doctorDto.DoctorId = int.Parse(dr["DoctorId"].ToString());
+            doctorDto.DoctorUserName = dr["DoctorUserName"].ToString();
+            doctorDto.DoctorRealName = dr["DoctorRealName"].ToString();
 
-            editorDto.EditorPassword = dr["EditorPassword"].ToString();
+            doctorDto.DoctorPassword = dr["DoctorPassword"].ToString();
 
-            editorDto.EditorRegTime = DateTime.Parse(dr["EditorRegTime"].ToString());
+            doctorDto.DoctorRegTime = DateTime.Parse(dr["DoctorRegTime"].ToString());
 
-            return editorDto;
+            return doctorDto;
         }
 
         #endregion
 
         #region 将数据集映射成DTO
-        private static EditorDto getDataReaderToEditorDto(SqlDataReader dr)
+        private static DoctorDto getDataReaderToDoctorDto(SqlDataReader dr)
         {
-            EditorDto editorDto = new EditorDto();
+            DoctorDto doctorDto = new DoctorDto();
 
 
-            editorDto.EditorId = int.Parse(dr["EditorId"].ToString());
-            editorDto.EditorUserName = dr["EditorUserName"].ToString();
-            editorDto.EditorRealName = dr["EditorRealName"].ToString();
+            doctorDto.DoctorId = int.Parse(dr["DoctorId"].ToString());
+            doctorDto.DoctorUserName = dr["DoctorUserName"].ToString();
+            doctorDto.DoctorRealName = dr["DoctorRealName"].ToString();
 
-            editorDto.EditorPassword = dr["EditorPassword"].ToString();
+            doctorDto.DoctorPassword = dr["DoctorPassword"].ToString();
 
-            editorDto.EditorRegTime = DateTime.Parse(dr["EditorRegTime"].ToString());
-            return editorDto;
+            doctorDto.DoctorRegTime = DateTime.Parse(dr["DoctorRegTime"].ToString());
+            return doctorDto;
         }
 
         #endregion
 
-        #region 删除一个Editor对象DTO
-        public static void DeleteEditorDto(string table, string strwhere)
+        #region 删除一个Doctor对象DTO
+        public static void DeleteDoctorDto(string table, string strwhere)
         {
 
 
@@ -173,13 +173,13 @@ namespace QxsqDAL
         #endregion
 
 
-        #region 更新一个Editor
-        public static void UpdateEditor(EditorDto editorDto)
+        #region 更新一个Doctor
+        public static void UpdateDoctor(DoctorDto doctorDto)
         {
 
-            SqlParameter[] arParames = EditorDal.getParameters(editorDto);
+            SqlParameter[] arParames = DoctorDal.getParameters(doctorDto);
 
-            SqlHelper.ExecuteNonQuery(CommonDal.ConnectionString, CommandType.StoredProcedure, "UpdateEditor", arParames);
+            SqlHelper.ExecuteNonQuery(CommonDal.ConnectionString, CommandType.StoredProcedure, "UpdateDoctor", arParames);
 
 
         }
@@ -188,7 +188,7 @@ namespace QxsqDAL
 
 
         #region 取得单表的查询并进行分页数据
-        public static Pager GetEditorPage(Pager pager, string strwhere, string table)
+        public static Pager GetDoctorPage(Pager pager, string strwhere, string table)
         {
             SqlParameter[] arParms = new SqlParameter[9];
             //@tbname   --要分页显示的表名
@@ -197,7 +197,7 @@ namespace QxsqDAL
 
             // @FieldKey --用于定位记录的主键(惟一键)字段,可以是逗号分隔的多个字段
             arParms[1] = new SqlParameter("@FieldKey", SqlDbType.NVarChar, 40);
-            arParms[1].Value = "EditorId";
+            arParms[1].Value = "DoctorId";
 
             //@PageCurrent --要显示的页码
             arParms[2] = new SqlParameter("@PageCurrent", SqlDbType.Int);
@@ -214,7 +214,7 @@ namespace QxsqDAL
             //@FieldOrder --以逗号分隔的排序字段列表,可以指定在字段后面指定DESC/ASC用于指定排序顺序
 
             arParms[5] = new SqlParameter("@FieldOrder", SqlDbType.NVarChar, 500);
-            arParms[5].Value = "EditorId desc";
+            arParms[5].Value = "DoctorId desc";
 
             //@Where   --查询条件
             arParms[6] = new SqlParameter("@Where", SqlDbType.VarChar, 8000);
@@ -228,15 +228,15 @@ namespace QxsqDAL
             arParms[8] = new SqlParameter("@RecordCount", SqlDbType.Int);
             arParms[8].Direction = ParameterDirection.Output;
 
-            EditorDto editorDto = null;
-            List<EditorDto> list = new List<EditorDto>();
+            DoctorDto doctorDto = null;
+            List<DoctorDto> list = new List<DoctorDto>();
             DataTable dt = null;
             DataSet ds = SqlHelper.ExecuteDataset(CommonDal.ConnectionString, CommandType.StoredProcedure, "sp_AspNetPageView", arParms);
             dt = ds.Tables[0];
             foreach (DataRow dr in dt.Rows)
             {
-                editorDto = EditorDal.getDataRowToEditorDto(dr);
-                list.Add(editorDto);
+                doctorDto = DoctorDal.getDataRowToDoctorDto(dr);
+                list.Add(doctorDto);
             }
 
             var totalItems = (int)arParms[8].Value;
