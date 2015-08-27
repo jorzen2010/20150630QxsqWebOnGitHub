@@ -52,8 +52,7 @@
                                 <td>@item.ArticleClassName</td>
 
                                 <td>
-                                    <a href="@Url.Action("ArticleClassEdit", "ArticleClass", new { ArticleClassId = @item.ArticleClassId })">
-                                        <button class="btn btn-sm btn-success"><i class="fa fa fa-edit"></i>  编辑</button>
+                                    <a href="@Url.Action("ArticleClassEdit", "ArticleClass", new { ArticleClassId = @item.ArticleClassId })"  class="btn btn-sm btn-success"><i class="fa fa fa-edit"></i>  编辑
                                     </a>  
                                     <button class="btn btn-sm btn-danger" onclick="DeleteArticleClass(@item.ArticleClassId)"><i class="fa fa-trash-o"></i>  删除</button>
                                 </td>

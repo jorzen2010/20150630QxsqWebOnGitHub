@@ -54,8 +54,7 @@
                                 <td>@item.EditorRealName</td>
                                 <td>@item.EditorRegTime</td>
                                 <td>
-                                    <a href="@Url.Action("EditorEdit", "Editor", new { EditorId = @item.EditorId })">
-                                        <button class="btn btn-sm btn-success"><i class="fa fa fa-edit"></i>  编辑</button>
+                                    <a href="@Url.Action("EditorEdit", "Editor", new { EditorId = @item.EditorId })" class="btn btn-sm btn-success"><i class="fa fa fa-edit"></i>  编辑
                                     </a>  
                                     <button class="btn btn-sm btn-danger" onclick="DeleteEditor(@item.EditorId)"><i class="fa fa-trash-o"></i>  删除</button>
                                 </td>

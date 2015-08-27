@@ -54,8 +54,7 @@
                            
                                 <td>@item.MokuaiDateTime</td>
                                 <td>
-                                    <a href="@Url.Action("MokuaiEdit", "Mokuai", new { MokuaiId = @item.MokuaiId })">
-                                        <button class="btn btn-sm btn-success"><i class="fa fa fa-edit"></i>  编辑</button>
+                                    <a href="@Url.Action("MokuaiEdit", "Mokuai", new { MokuaiId = @item.MokuaiId })" class="btn btn-sm btn-success"><i class="fa fa fa-edit"></i>  编辑
                                     </a>  
                                     <button class="btn btn-sm btn-danger" onclick="DeleteMokuai(@item.MokuaiId)"><i class="fa fa-trash-o"></i>  删除</button>
                                 </td>

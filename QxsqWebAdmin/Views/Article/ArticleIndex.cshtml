@@ -55,8 +55,7 @@
                            
                                 <td>@item.ArticleDateTime</td>
                                 <td>
-                                    <a href="@Url.Action("ArticleEdit", "Article", new { ArticleId = @item.ArticleId })">
-                                        <button class="btn btn-sm btn-success"><i class="fa fa fa-edit"></i>  编辑</button>
+                                    <a href="@Url.Action("ArticleEdit", "Article", new { ArticleId = @item.ArticleId })" class="btn btn-sm btn-success"><i class="fa fa fa-edit"></i>  编辑
                                     </a>  
                                     <button class="btn btn-sm btn-danger" onclick="DeleteArticle(@item.ArticleId)"><i class="fa fa-trash-o"></i>  删除</button>
                                 </td>
