@@ -14,15 +14,27 @@ namespace QxsqDAL
     public class DoctorDal
     {
 
-       #region 网站管理员添加
+        #region 网站管理员添加
 
         public static void AddDoctor(DoctorDto doctorDto)
         {
 
             SqlParameter[] arParames = DoctorDal.getParameters(doctorDto);
+             SqlConnection myconn = new SqlConnection(CommonDal.ConnectionString);
+            try
+            {
+                SqlHelper.ExecuteNonQuery(myconn, CommandType.StoredProcedure, "CreateDoctor", arParames);
+}
+            catch (SqlException ex)
+            {
+                throw ex;
+            }
+            finally
+            {
 
-            SqlHelper.ExecuteNonQuery(CommonDal.ConnectionString, CommandType.StoredProcedure, "CreateDoctor", arParames);
-
+                myconn.Close();
+                myconn.Dispose();
+            }
         }
         #endregion
 
@@ -38,10 +50,12 @@ namespace QxsqDAL
 
             arParames[1] = new SqlParameter("@Where ", SqlDbType.VarChar, 8000);
             arParames[1].Value = strwhere;
-
+             SqlConnection myconn = new SqlConnection(CommonDal.ConnectionString);
+            try
+            {
             DataTable dt = null;
 
-            DataSet ds = SqlHelper.ExecuteDataset(CommonDal.ConnectionString, CommandType.StoredProcedure, "getModelByWhere", arParames);
+            DataSet ds = SqlHelper.ExecuteDataset(myconn, CommandType.StoredProcedure, "getModelByWhere", arParames);
             dt = ds.Tables[0];
             foreach (DataRow dr in dt.Rows)
             {
@@ -53,10 +67,21 @@ namespace QxsqDAL
 
             return doctorDto;
 
+}
+            catch (SqlException ex)
+            {
+                throw ex;
+            }
+            finally
+            {
 
+                myconn.Close();
+                myconn.Dispose();
+            }
 
         }
         #endregion
+
         #region 获取网站管理员List数据
         public static List<DoctorDto> GetDoctorList(string strwhere)
         {
@@ -70,9 +95,11 @@ namespace QxsqDAL
 
             arParames[1] = new SqlParameter("@Where ", SqlDbType.VarChar, 8000);
             arParames[1].Value = strwhere;
-
+             SqlConnection myconn = new SqlConnection(CommonDal.ConnectionString);
+            try
+            {
             DataTable dt = null;
-            DataSet ds = SqlHelper.ExecuteDataset(CommonDal.ConnectionString, CommandType.StoredProcedure, "getModelByWhere", arParames);
+            DataSet ds = SqlHelper.ExecuteDataset(myconn, CommandType.StoredProcedure, "getModelByWhere", arParames);
             dt = ds.Tables[0];
             foreach (DataRow dr in dt.Rows)
             {
@@ -86,7 +113,17 @@ namespace QxsqDAL
             }
 
             return doctorlist;
+}
+            catch (SqlException ex)
+            {
+                throw ex;
+            }
+            finally
+            {
 
+                myconn.Close();
+                myconn.Dispose();
+            }
         }
         #endregion
 
@@ -164,23 +201,46 @@ namespace QxsqDAL
 
             arParames[1] = new SqlParameter("@Where ", SqlDbType.VarChar, 8000);
             arParames[1].Value = strwhere;
+             SqlConnection myconn = new SqlConnection(CommonDal.ConnectionString);
+            try
+            {
+                SqlHelper.ExecuteNonQuery(myconn, CommandType.StoredProcedure, "deleteModelByWhere", arParames);
+}
+            catch (SqlException ex)
+            {
+                throw ex;
+            }
+            finally
+            {
 
-            SqlHelper.ExecuteNonQuery(CommonDal.ConnectionString, CommandType.StoredProcedure, "deleteModelByWhere", arParames);
-
+                myconn.Close();
+                myconn.Dispose();
+            }
 
 
         }
         #endregion
-
 
         #region 更新一个Doctor
         public static void UpdateDoctor(DoctorDto doctorDto)
         {
 
             SqlParameter[] arParames = DoctorDal.getParameters(doctorDto);
+             SqlConnection myconn = new SqlConnection(CommonDal.ConnectionString);
+            try
+            {
+                SqlHelper.ExecuteNonQuery(myconn, CommandType.StoredProcedure, "UpdateDoctor", arParames);
+                }
+            catch (SqlException ex)
+            {
+                throw ex;
+            }
+            finally
+            {
 
-            SqlHelper.ExecuteNonQuery(CommonDal.ConnectionString, CommandType.StoredProcedure, "UpdateDoctor", arParames);
-
+                myconn.Close();
+                myconn.Dispose();
+            }
 
         }
 
@@ -227,11 +287,13 @@ namespace QxsqDAL
             //@RecordCount --总记录数
             arParms[8] = new SqlParameter("@RecordCount", SqlDbType.Int);
             arParms[8].Direction = ParameterDirection.Output;
-
+             SqlConnection myconn = new SqlConnection(CommonDal.ConnectionString);
+            try
+            {
             DoctorDto doctorDto = null;
             List<DoctorDto> list = new List<DoctorDto>();
             DataTable dt = null;
-            DataSet ds = SqlHelper.ExecuteDataset(CommonDal.ConnectionString, CommandType.StoredProcedure, "sp_AspNetPageView", arParms);
+            DataSet ds = SqlHelper.ExecuteDataset(myconn, CommandType.StoredProcedure, "sp_AspNetPageView", arParms);
             dt = ds.Tables[0];
             foreach (DataRow dr in dt.Rows)
             {
@@ -246,6 +308,17 @@ namespace QxsqDAL
             pager.PageCount = (int)arParms[7].Value;
 
             return pager;
+            }
+            catch (SqlException ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+
+                myconn.Close();
+                myconn.Dispose();
+            }
         }
         #endregion
     }

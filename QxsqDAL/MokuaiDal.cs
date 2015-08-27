@@ -20,9 +20,21 @@ namespace QxsqDAL
         {
 
             SqlParameter[] arParames = MokuaiDal.getParameters(mokuaiDto);
+            SqlConnection myconn = new SqlConnection(CommonDal.ConnectionString);
+            try
+            {
+                SqlHelper.ExecuteNonQuery(myconn, CommandType.StoredProcedure, "CreateMokuai", arParames);
+}
+            catch (SqlException ex)
+            {
+                throw ex;
+            }
+            finally
+            {
 
-            SqlHelper.ExecuteNonQuery(CommonDal.ConnectionString, CommandType.StoredProcedure, "CreateMokuai", arParames);
-
+                myconn.Close();
+                myconn.Dispose();
+            }
         }
         #endregion
 
@@ -38,10 +50,12 @@ namespace QxsqDAL
 
             arParames[1] = new SqlParameter("@Where ", SqlDbType.VarChar, 8000);
             arParames[1].Value = strwhere;
-
+            SqlConnection myconn = new SqlConnection(CommonDal.ConnectionString);
+            try
+            {
             DataTable dt = null;
 
-            DataSet ds = SqlHelper.ExecuteDataset(CommonDal.ConnectionString, CommandType.StoredProcedure, "getModelByWhere", arParames);
+            DataSet ds = SqlHelper.ExecuteDataset(myconn, CommandType.StoredProcedure, "getModelByWhere", arParames);
             dt = ds.Tables[0];
             foreach (DataRow dr in dt.Rows)
             {
@@ -53,7 +67,17 @@ namespace QxsqDAL
 
             return mokuaiDto;
 
+                }
+            catch (SqlException ex)
+            {
+                throw ex;
+            }
+            finally
+            {
 
+                myconn.Close();
+                myconn.Dispose();
+            }
 
         }
         #endregion
@@ -71,9 +95,11 @@ namespace QxsqDAL
 
             arParames[1] = new SqlParameter("@Where ", SqlDbType.VarChar, 8000);
             arParames[1].Value = strwhere;
-
+            SqlConnection myconn = new SqlConnection(CommonDal.ConnectionString);
+            try
+            {
             DataTable dt = null;
-            DataSet ds = SqlHelper.ExecuteDataset(CommonDal.ConnectionString, CommandType.StoredProcedure, "getModelByWhere", arParames);
+            DataSet ds = SqlHelper.ExecuteDataset(myconn, CommandType.StoredProcedure, "getModelByWhere", arParames);
             dt = ds.Tables[0];
             foreach (DataRow dr in dt.Rows)
             {
@@ -87,7 +113,17 @@ namespace QxsqDAL
             }
 
             return mokuailist;
+            }
+            catch (SqlException ex)
+            {
+                throw ex;
+            }
+            finally
+            {
 
+                myconn.Close();
+                myconn.Dispose();
+            }
         }
         #endregion
 
@@ -171,9 +207,21 @@ namespace QxsqDAL
 
             arParames[1] = new SqlParameter("@Where ", SqlDbType.VarChar, 8000);
             arParames[1].Value = strwhere;
+            SqlConnection myconn = new SqlConnection(CommonDal.ConnectionString);
+            try
+            {
+                SqlHelper.ExecuteNonQuery(myconn, CommandType.StoredProcedure, "deleteModelByWhere", arParames);
+                }
+            catch (SqlException ex)
+            {
+                throw ex;
+            }
+            finally
+            {
 
-            SqlHelper.ExecuteNonQuery(CommonDal.ConnectionString, CommandType.StoredProcedure, "deleteModelByWhere", arParames);
-
+                myconn.Close();
+                myconn.Dispose();
+            }
 
 
         }
@@ -184,10 +232,22 @@ namespace QxsqDAL
         {
 
             SqlParameter[] arParames = MokuaiDal.getParameters(mokuaiDto);
+            SqlConnection myconn = new SqlConnection(CommonDal.ConnectionString);
+            try
+            {
+                SqlHelper.ExecuteNonQuery(myconn, CommandType.StoredProcedure, "UpdateMokuai", arParames);
 
-            SqlHelper.ExecuteNonQuery(CommonDal.ConnectionString, CommandType.StoredProcedure, "UpdateMokuai", arParames);
+                }
+            catch (SqlException ex)
+            {
+                throw ex;
+            }
+            finally
+            {
 
-
+                myconn.Close();
+                myconn.Dispose();
+            }
         }
 
         #endregion
@@ -232,11 +292,13 @@ namespace QxsqDAL
             //@RecordCount --总记录数
             arParms[8] = new SqlParameter("@RecordCount", SqlDbType.Int);
             arParms[8].Direction = ParameterDirection.Output;
-
+            SqlConnection myconn = new SqlConnection(CommonDal.ConnectionString);
+            try
+            {
             MokuaiDto MokuaiDto = null;
             List<MokuaiDto> list = new List<MokuaiDto>();
             DataTable dt = null;
-            DataSet ds = SqlHelper.ExecuteDataset(CommonDal.ConnectionString, CommandType.StoredProcedure, "sp_AspNetPageView", arParms);
+            DataSet ds = SqlHelper.ExecuteDataset(myconn, CommandType.StoredProcedure, "sp_AspNetPageView", arParms);
             dt = ds.Tables[0];
             foreach (DataRow dr in dt.Rows)
             {
@@ -251,6 +313,17 @@ namespace QxsqDAL
             pager.PageCount = (int)arParms[7].Value;
 
             return pager;
+                }
+            catch (SqlException ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+
+                myconn.Close();
+                myconn.Dispose();
+            }
         }
         #endregion
     }
